@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:ptr="http://schemas.android.com/tools"
+    >
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/shape_homepage_title_rl"
+        >
+
+        <TextView
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="待办工作"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#eeeeee"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/wyRg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/wei_meet_manage_current"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/meet_notice_rb_selector"
+                    android:button="@null"
+                    android:checked="true"
+                    android:padding="7dp"
+                    android:text="未 完 成"
+                    android:textColor="@drawable/meet_manage_rbtv_selector"
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/yi_meet_manage_history"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/meet_notice_rb_selector"
+                    android:button="@null"
+                    android:padding="7dp"
+                    android:text="已 完 成"
+                    android:textColor="@drawable/meet_manage_rbtv_selector"
+                    android:textSize="18sp" />
+
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/title2"
+            android:orientation="horizontal"
+            android:paddingBottom="6dp"
+            android:paddingTop="6dp">
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="编号"
+                android:textColor="#000"
+                android:textSize="16dp"
+
+                />
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center"
+                android:text="工作主题"
+                android:textColor="#000"
+                android:textSize="16dp" />
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:text="创建时间"
+                android:textColor="#000"
+                android:textSize="16dp" />
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:text="状态"
+                android:textColor="#000"
+                android:textSize="16dp" />
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="备注"
+                android:textColor="#000"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+        <com.handmark.pulltorefresh.library.PullToRefreshListView
+            android:id="@+id/daiban_detail_lv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:cacheColorHint="#000000"
+            android:divider="#19000000"
+            android:fastScrollEnabled="false"
+            android:footerDividersEnabled="true"
+            android:smoothScrollbar="true"
+            ptr:ptrAnimationStyle="rotate"></com.handmark.pulltorefresh.library.PullToRefreshListView>
+        <TextView
+            android:id="@+id/not"
+            android:layout_width="match_parent"
+            android:textSize="16dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="暂无数据"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+</LinearLayout>

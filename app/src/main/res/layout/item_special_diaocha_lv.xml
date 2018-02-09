@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    >
+
+
+    <LinearLayout
+        android:padding="5dp"
+        android:id="@+id/item_special_diaocha_ll"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:gravity="center"
+            android:textColor="#666666"
+            android:id="@+id/item_special_diaocha_number_tv"
+            android:paddingLeft="3dp"
+            style="@style/resources_main_title"
+            android:layout_weight="0.5"
+            android:text="序号" />
+
+        <TextView
+            android:gravity="center"
+            android:textColor="#666666"
+            android:paddingLeft="5dp"
+            android:id="@+id/item_special_diaocha_title_tv"
+            style="@style/resources_main_title"
+            android:layout_weight="1.5"
+            android:text="标题" />
+
+        <TextView
+            android:gravity="center"
+            android:textColor="#666666"
+            android:paddingLeft="10dp"
+            android:id="@+id/item_special_diaocha_no_tv"
+            style="@style/resources_main_title"
+            android:layout_weight="1"
+            android:text="问卷编号" />
+
+        <TextView
+            android:gravity="center"
+            android:textColor="#666666"
+            android:id="@+id/item_special_diaocha_time_tv"
+            style="@style/resources_main_title"
+            android:layout_weight="1"
+            android:text="调查时间" />
+
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#A9C6C9"/>
+</LinearLayout>

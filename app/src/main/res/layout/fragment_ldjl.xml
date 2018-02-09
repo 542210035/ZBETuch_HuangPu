@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:ptr="http://schemas.android.com/tools">
+
+    <com.youli.zbetuch_huangpu.view.MyHorizontalScrollView
+        android:id="@+id/hsv_fragment_ldjl_title"
+        android:overScrollMode="never"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:scrollbars="none"
+        >
+
+        <LinearLayout
+            android:background="@drawable/title2"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/resources_main_title"
+                android:layout_width="50dp"
+                android:text="编号"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/resources_main_title"
+                android:layout_width="130dp"
+                android:text="工作单位名称"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <TextView
+                style="@style/resources_main_title"
+                android:layout_width="100dp"
+                android:text="单位性质"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <TextView
+                style="@style/resources_main_title"
+                android:layout_width="100dp"
+                android:text="起始日期"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/resources_main_title"
+                android:layout_width="100dp"
+                android:text="终止日期"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/resources_main_title"
+                android:layout_width="100dp"
+                android:text="就业类型"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/resources_main_title"
+                android:layout_width="100dp"
+                android:text="用工形式"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/resources_main_title"
+                android:layout_width="130dp"
+                android:text="退工原因"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/resources_main_title"
+                android:layout_width="100dp"
+                android:text="备注"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <TextView
+                style="@style/resources_main_title"
+                android:layout_width="100dp"
+                android:text="就业登记日期"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/resources_main_title"
+                android:layout_width="100dp"
+                android:text="退工登记日期"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/resources_main_title"
+                android:layout_width="120dp"
+                android:text="就业登记所在地"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/resources_main_title"
+                android:layout_width="120dp"
+                android:text="退工登记所在地"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </com.youli.zbetuch_huangpu.view.MyHorizontalScrollView>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshScrollView
+        android:scrollbars="none"
+        android:id="@+id/psv_ldjl"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:cacheColorHint="#000000"
+        android:divider="#19000000"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="true"
+        android:smoothScrollbar="true"
+        ptr:ptrAnimationStyle="rotate">
+        <com.youli.zbetuch_huangpu.view.MyHorizontalScrollView
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            android:id="@+id/hsv_fragment_ldjl_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+
+            <com.youli.zbetuch_huangpu.view.MyListView
+                android:scrollbars="none"
+                android:divider="@null"
+                android:id="@+id/lv_fragment_ldjl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></com.youli.zbetuch_huangpu.view.MyListView>
+
+        </com.youli.zbetuch_huangpu.view.MyHorizontalScrollView>
+    </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+
+</LinearLayout>

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.youli.zbetuch_huangpu.activity.CheCkMailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/shape_homepage_title_rl"
+        >
+        <TextView
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查看邮件"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:textColor="#000"
+            android:id="@+id/mail_ck_zt"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_centerInParent="true"
+            />
+
+        <Button
+            android:textColor="#fff"
+            android:id="@+id/btn_meet_detail_isread"
+            android:visibility="gone"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/button_selector"/>
+    </RelativeLayout>
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="12dp"
+        >
+
+        <ImageView
+            android:src="@drawable/tz"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="8dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="发件人："
+                    android:textSize="16dp"
+                    />
+                <TextView
+                    android:id="@+id/mail_ck_fjr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:textSize="16dp"
+                    android:text="jjj"
+                    />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#b6b4b4"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="12dp">
+
+        <ImageView
+            android:src="@drawable/fbsj"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="8dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="时    间："
+                    android:textSize="16dp"
+                    />
+                <TextView
+                    android:id="@+id/mail_ck_sj"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:text="aac"
+                    android:textSize="16dp"
+                    />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#b6b4b4"
+                android:layout_marginRight="6dp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="12dp"
+                >
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/content"
+                    android:layout_marginRight="8dp"
+                    />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="邮件内容："
+                        android:textSize="16dp"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        tools:ignore="WebViewLayout"
+                        >
+                        <WebView
+                            android:id="@+id/wv_yj"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#fafafa"
+                            ></WebView>
+                    </LinearLayout>
+
+                </LinearLayout>
+                        <View
+                             android:layout_width="match_parent"
+                             android:layout_height="1dp"
+                             android:background="#b6b4b4"
+                              />
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal"-->
+                <!--&gt;-->
+                <!--<ImageView-->
+                    <!--android:layout_width="30dp"-->
+                    <!--android:layout_height="30dp"-->
+                    <!--android:layout_marginRight="8dp"-->
+                    <!--/>-->
+
+            <!--</LinearLayout>-->
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="12dp"
+                >
+
+                <ImageView
+                    android:src="@drawable/fj"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="8dp"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="附    件："
+                            android:textSize="16dp"
+                            />
+
+                        <com.youli.zbetuch_huangpu.view.MyListView
+                            android:id="@+id/lv_yj_ckyj"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            />
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#b6b4b4"
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

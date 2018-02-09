@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:ptr="http://schemas.android.com/tools"
+
+    >
+    <RelativeLayout
+        android:background="@drawable/shape_homepage_title_rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        >
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#fff"
+            android:layout_margin="6dp"
+            android:background="@drawable/xz"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/text_lll"
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:text="@string/zphdwxx_zpgwxx_title"
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:orientation="horizontal"
+        android:background="@drawable/title2"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:text="编号"
+            android:textSize="16dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:textColor="#000"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="岗位名称"
+            android:textSize="16dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:textColor="#000"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.8"
+            android:layout_height="wrap_content"
+            android:text="面试人数"
+            android:textSize="16dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:textColor="#000"
+            />
+
+
+    </LinearLayout>
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/lv_my_zpgwxx"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="#000000"
+        android:divider="#19000000"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="true"
+        android:smoothScrollbar="true"
+        ptr:ptrAnimationStyle="rotate"/>
+
+    <TextView
+        android:id="@+id/zpgwxx_zwxx_tv_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="暂无数据"
+        android:textSize="18dp"
+        android:textColor="#000"
+        android:gravity="center"
+        android:visibility="gone"
+        />
+
+</LinearLayout>

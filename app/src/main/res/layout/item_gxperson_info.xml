@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+
+    >
+
+    <LinearLayout
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:textColor="#666666"
+        android:id="@+id/tv_item_naire_person_name"
+        style="@style/gradeate_list_titletext"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="姓名" />
+
+    <TextView
+        android:textColor="#666666"
+        android:id="@+id/tv_item_naire_person_sex"
+        style="@style/gradeate_list_titletext"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:text="性别" />
+
+    <TextView
+        android:textColor="#666666"
+        android:id="@+id/tv_item_naire_person_street"
+        style="@style/gradeate_list_titletext"
+        android:layout_width="0dp"
+        android:layout_weight="1.9"
+        android:gravity="center"
+        android:text="街道" />
+    <TextView
+        android:textColor="#666666"
+        android:id="@+id/tv_item_naire_person_jw"
+        style="@style/gradeate_list_titletext"
+        android:layout_width="0dp"
+        android:layout_weight="1.1"
+        android:text="居委" />
+    <TextView
+        android:textColor="#666666"
+        android:id="@+id/tv_item_naire_person_huji"
+        style="@style/gradeate_list_titletext"
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:text="户籍地址" />
+    <TextView
+        android:textColor="#666666"
+        android:id="@+id/tv_item_naire_person_family_num"
+        style="@style/gradeate_list_titletext"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:text="家庭成员数量" />
+        </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#A9C6C9"/>
+
+</LinearLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:ptr="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <com.youli.zbetuch_huangpu.view.MyHorizontalScrollView
+        android:id="@+id/hsv_fragment_study_jl_title"
+        android:overScrollMode="never"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:scrollbars="none"
+        >
+
+    <LinearLayout
+        android:background="@drawable/title2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textColor="#000"
+            android:paddingLeft="3dp"
+            style="@style/resources_main_title"
+            android:layout_width="50dp"
+            android:text="编号" />
+
+        <TextView
+            android:textColor="#000"
+            style="@style/resources_main_title"
+            android:layout_width="100dp"
+            android:text="起始日期" />
+
+        <TextView
+            android:textColor="#000"
+            style="@style/resources_main_title"
+            android:layout_width="100dp"
+            android:text="终止日期" />
+
+        <TextView
+            android:textColor="#000"
+            style="@style/resources_main_title"
+            android:layout_width="150dp"
+            android:text="学校名称" />
+
+        <TextView
+            android:textColor="#000"
+            style="@style/resources_main_title"
+            android:layout_width="100dp"
+            android:text="文化程度" />
+
+        <TextView
+            android:textColor="#000"
+            style="@style/resources_main_title"
+            android:layout_width="100dp"
+            android:text="所学专业" />
+        <TextView
+            android:textColor="#000"
+            style="@style/resources_main_title"
+            android:layout_width="100dp"
+            android:text="是否毕肄业" />
+        <TextView
+            android:textColor="#000"
+            style="@style/resources_main_title"
+            android:layout_width="100dp"
+            android:text="是否全日制" />
+        <TextView
+            android:textColor="#000"
+            style="@style/resources_main_title"
+            android:layout_width="100dp"
+            android:text="备注" />
+    </LinearLayout>
+    </com.youli.zbetuch_huangpu.view.MyHorizontalScrollView>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshScrollView
+        android:scrollbars="none"
+        android:id="@+id/psv_study_jl"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:cacheColorHint="#000000"
+        android:divider="#19000000"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="true"
+        android:smoothScrollbar="true"
+        ptr:ptrAnimationStyle="rotate">
+        <com.youli.zbetuch_huangpu.view.MyHorizontalScrollView
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            android:id="@+id/hsv_fragment_study_jl_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+
+            <com.youli.zbetuch_huangpu.view.MyListView
+                android:scrollbars="none"
+                android:divider="@null"
+                android:id="@+id/lv_fragment_study_jl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></com.youli.zbetuch_huangpu.view.MyListView>
+
+        </com.youli.zbetuch_huangpu.view.MyHorizontalScrollView>
+    </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+
+</LinearLayout>

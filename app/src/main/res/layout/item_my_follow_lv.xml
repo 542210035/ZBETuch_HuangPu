@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:id="@+id/item_my_follow_ll">
+
+
+    <LinearLayout
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:padding="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:textColor="#666666"
+            android:id="@+id/item_my_follow_number_tv"
+            android:paddingLeft="3dp"
+            style="@style/resources_main_title"
+            android:layout_weight="1"
+            android:text="编号" />
+
+        <TextView
+            android:textColor="#666666"
+            android:paddingLeft="15dp"
+            android:id="@+id/item_my_follow_name_tv"
+            style="@style/resources_main_title"
+            android:layout_weight="2"
+            android:text="姓名" />
+
+        <TextView
+            android:textColor="#666666"
+            android:paddingLeft="10dp"
+            android:id="@+id/item_my_follow_sfz_tv"
+            style="@style/resources_main_title"
+            android:layout_weight="5"
+            android:text="身份证" />
+
+        <Button
+            android:id="@+id/btn_item_follow_details"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/button_selector"
+            style="@style/resources_main_title"
+            android:layout_weight="2"
+            android:layout_height="35dp"
+            android:textColor="#fff"
+            android:text="查看详情"/>
+
+        <Button
+            android:id="@+id/btn_item_follow_follow"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/button_selector"
+            style="@style/resources_main_title"
+            android:layout_weight="2"
+            android:layout_height="35dp"
+            android:textColor="#fff"
+            android:text="取消关注"/>
+
+
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#A9C6C9"/>
+</LinearLayout>

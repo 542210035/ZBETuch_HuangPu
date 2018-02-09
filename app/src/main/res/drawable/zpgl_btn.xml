@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--<item android:drawable="#6c97ee" android:state_pressed="false"/>-->
+    <!--<item android:drawable="#f8af46" android:state_pressed="true"/>-->
+<corners
+    android:topLeftRadius="30dp"
+    android:topRightRadius="30dp"
+    android:bottomLeftRadius="30dp"
+    android:bottomRightRadius="30dp"
+    />
+</selector>

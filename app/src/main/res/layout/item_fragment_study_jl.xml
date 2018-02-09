@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp"
+    android:id="@+id/item_fragment_study_jl_ll">
+
+    <TextView
+        android:id="@+id/tv_item_fragment_study_jl_no"
+        android:textColor="#666666"
+        android:paddingLeft="3dp"
+        style="@style/resources_main_title"
+        android:layout_width="50dp"
+        android:text="编号" />
+
+    <TextView
+        android:id="@+id/tv_item_fragment_study_jl_start_time"
+        android:textColor="#666666"
+        style="@style/resources_main_title"
+        android:layout_width="100dp"
+        android:text="起始日期" />
+
+    <TextView
+        android:id="@+id/tv_item_fragment_study_jl_end_time"
+        android:textColor="#666666"
+        style="@style/resources_main_title"
+        android:layout_width="100dp"
+        android:text="终止日期" />
+
+    <TextView
+        android:id="@+id/tv_item_fragment_study_shool_name"
+        android:textColor="#666666"
+        style="@style/resources_main_title"
+        android:layout_width="150dp"
+        android:text="学校名称" />
+
+    <TextView
+        android:id="@+id/tv_item_fragment_study_edu"
+        android:textColor="#666666"
+        style="@style/resources_main_title"
+        android:layout_width="100dp"
+        android:text="文化程度" />
+
+    <TextView
+        android:id="@+id/tv_item_fragment_study_major"
+        android:textColor="#666666"
+        style="@style/resources_main_title"
+        android:layout_width="100dp"
+        android:text="所学专业" />
+    <TextView
+        android:id="@+id/tv_item_fragment_study_is_grad"
+        android:textColor="#666666"
+        style="@style/resources_main_title"
+        android:layout_width="100dp"
+        android:text="是否毕肄业" />
+    <TextView
+        android:id="@+id/tv_item_fragment_study_full_time"
+        android:textColor="#666666"
+        style="@style/resources_main_title"
+        android:layout_width="100dp"
+        android:text="是否全日制" />
+    <TextView
+        android:id="@+id/tv_item_fragment_study_mark"
+        android:textColor="#666666"
+        style="@style/resources_main_title"
+        android:layout_width="100dp"
+        android:text="备注" />
+</LinearLayout>
+

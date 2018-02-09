@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">黄浦区社区就业保障服务信息管理系统</string>
+    <!--<string name="title">社区就业保障服务系统</string>-->
+    <string name="title">黄浦区社区就业保障服务信息管理系统</string>
+    <string name="zyjs_title">职业介绍</string>
+    <string name="spinner_title">请选择</string>
+    <string name="zpgl_title">招聘管理</string>
+    <string name="zphdwxx_title">招聘会单位信息</string>
+    <string name="yjgl_title">邮件管理</string>
+    <string name="zphdwxx_zpgwxx_title">招聘岗位信息</string>
+    <string name="zphdwxx_msxx_title">面试信息</string>
+</resources>

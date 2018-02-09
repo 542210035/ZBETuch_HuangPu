@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/shape_homepage_title_rl"
+        >
+
+        <TextView
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="会 议 管 理"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#eeeeee"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:textColor="@drawable/meet_manage_rbtv_selector"
+                    android:textSize="18sp"
+                    android:padding="7dp"
+                    android:onClick="onChange"
+                    android:id="@+id/rb_meet_manage_current"
+                    android:checked="true"
+                    android:background="@drawable/meet_notice_rb_selector"
+                    android:button="@null"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="当 前 会 议"/>
+
+                <RadioButton
+                    android:textColor="@drawable/meet_manage_rbtv_selector"
+                    android:textSize="18sp"
+                    android:padding="7dp"
+                    android:onClick="onChange"
+                    android:id="@+id/rb_meet_manage_history"
+                    android:background="@drawable/meet_notice_rb_selector"
+                    android:button="@null"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="历 史 会 议"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:visibility="gone"
+                android:layout_gravity="bottom|end"
+                android:gravity="end"
+                android:id="@+id/tv_meet_manage_readnum"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+
+        <!--<LinearLayout-->
+            <!--android:background="#50AAFF"-->
+            <!--android:paddingTop="6dp"-->
+            <!--android:paddingBottom="6dp"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<TextView-->
+                <!--android:textSize="16dp"-->
+                <!--android:gravity="center"-->
+                <!--android:textColor="#ffffff"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="编号"/>-->
+
+            <!--<TextView-->
+                <!--android:textSize="16dp"-->
+                <!--android:paddingLeft="20dp"-->
+                <!--android:gravity="center"-->
+                <!--android:textColor="#ffffff"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="3"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="会议主题"/>-->
+            <!--<TextView-->
+                <!--android:textSize="16dp"-->
+                <!--android:paddingLeft="20dp"-->
+                <!--android:gravity="center"-->
+                <!--android:textColor="#ffffff"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="3"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="会议地址"/>-->
+            <!--<TextView-->
+                <!--android:textSize="16dp"-->
+                <!--android:gravity="center"-->
+                <!--android:textColor="#ffffff"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="3"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="会议时间"/>-->
+
+            <!--<TextView-->
+                <!--android:textSize="16dp"-->
+                <!--android:gravity="center"-->
+                <!--android:textColor="#ffffff"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="2"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="通知人"/>-->
+
+            <!--<TextView-->
+                <!--android:textSize="16dp"-->
+                <!--android:gravity="center"-->
+                <!--android:textColor="#ffffff"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="3"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="发布时间"/>-->
+        <!--</LinearLayout>-->
+
+        <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="2dp"-->
+            <!--android:background="#8ec7fd"/>-->
+
+        <LinearLayout
+            android:background="@drawable/title2"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:textColor="#000"
+                android:paddingLeft="3dp"
+                style="@style/resources_main_title"
+                android:layout_width="wrap_content"
+                android:text="编号" />
+
+            <TextView
+                android:textColor="#000"
+                style="@style/resources_main_title"
+                android:layout_weight="3"
+                android:text="会议主题" />
+
+            <TextView
+                android:textColor="#000"
+                style="@style/resources_main_title"
+                android:layout_weight="3"
+            android:text="会议地址" />
+
+            <TextView
+                android:textColor="#000"
+                style="@style/resources_main_title"
+                android:layout_weight="3"
+                android:text="会议时间" />
+
+            <TextView
+                android:textColor="#000"
+                style="@style/resources_main_title"
+                android:layout_weight="2"
+                android:text="通知人" />
+
+            <TextView
+                android:textColor="#000"
+                style="@style/resources_main_title"
+                android:layout_weight="3"
+                android:text="发布时间" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_meet_manage"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"></FrameLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

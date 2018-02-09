@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/shape_homepage_title_rl">
+
+        <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:src="@drawable/shiyetongjidetail" />-->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="通 知 公 告"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_tongzhi_naire_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:textColor="#fff"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/title2"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            style="@style/resources_main_title"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:paddingLeft="3dp"
+            android:text="创建日期"
+            android:textColor="#000" />
+
+        <TextView
+            style="@style/resources_main_title"
+            android:layout_weight="1.5"
+            android:gravity="center"
+            android:text="标题"
+            android:textColor="#000" />
+
+    </LinearLayout>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/lv_tongzhi_naire"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:cacheColorHint="#000000"
+        android:divider="#19000000"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="true"
+        android:smoothScrollbar="true">
+    </com.handmark.pulltorefresh.library.PullToRefreshListView>
+
+    <TextView
+        android:id="@+id/tongzhi_detail_tv_nodata"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="暂无数据" />
+
+</LinearLayout>

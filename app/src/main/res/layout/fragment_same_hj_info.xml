@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fu_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+<!--<LinearLayout-->
+    <!--android:id="@+id/linear_item_geren1"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="vertical"-->
+    <!--&gt;-->
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="30dp"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:background="#cccc"-->
+        <!--&gt;-->
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_item_geren1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginLeft="6dp"-->
+            <!--android:src="@drawable/sj"-->
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:id="@+id/tv_item_geren1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:text="户籍地址："-->
+            <!--android:layout_marginLeft="4dp"-->
+            <!--/>-->
+    <!--</LinearLayout>-->
+
+    <!--<com.handmark.pulltorefresh.library.PullToRefreshListView-->
+        <!--android:id="@+id/lv_item_geren1"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:cacheColorHint="#000000"-->
+        <!--android:divider="#19000000"-->
+        <!--android:fastScrollEnabled="false"-->
+        <!--android:footerDividersEnabled="true"-->
+        <!--android:smoothScrollbar="true">-->
+    <!--</com.handmark.pulltorefresh.library.PullToRefreshListView>-->
+
+<!--</LinearLayout>-->
+
+
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/linear_item_geren2"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical"-->
+        <!--&gt;-->
+    <!--<LinearLayout-->
+
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="30dp"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:background="#cccc"-->
+        <!--&gt;-->
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_item_geren2"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginLeft="6dp"-->
+            <!--android:src="@drawable/sj"-->
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:id="@+id/tv_item_geren2"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:text="现  住  址："-->
+            <!--android:layout_marginLeft="4dp"-->
+            <!--/>-->
+
+    <!--</LinearLayout>-->
+        <!--<com.handmark.pulltorefresh.library.PullToRefreshListView-->
+            <!--android:id="@+id/lv_item_geren2"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:cacheColorHint="#000000"-->
+            <!--android:divider="#19000000"-->
+            <!--android:fastScrollEnabled="false"-->
+            <!--android:footerDividersEnabled="true"-->
+            <!--android:smoothScrollbar="true">-->
+        <!--</com.handmark.pulltorefresh.library.PullToRefreshListView>-->
+<!--</LinearLayout>-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/tv_wu"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:textSize="18sp"-->
+        <!--android:text="暂无数据"-->
+        <!--android:gravity="center"-->
+        <!--/>-->
+
+</LinearLayout>

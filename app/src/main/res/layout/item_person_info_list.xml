@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/item_person_info_list_ll"
+    >
+
+    <LinearLayout
+        android:paddingBottom="9dp"
+        android:paddingTop="9dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_item_person_info_list_no"
+        android:textColor="#666666"
+        android:paddingLeft="3dp"
+        style="@style/resources_main_title"
+        android:layout_weight="1"
+         />
+
+    <TextView
+        android:id="@+id/tv_item_person_info_list_name"
+        android:textColor="#666666"
+        style="@style/resources_main_title"
+        android:layout_weight="2"
+         />
+
+    <TextView
+        android:id="@+id/tv_item_person_info_list_sex"
+        android:textColor="#666666"
+        style="@style/resources_main_title"
+        android:layout_weight="2"
+         />
+
+    <TextView
+        android:id="@+id/tv_item_person_info_list_birth"
+        android:textColor="#666666"
+        style="@style/resources_main_title"
+        android:layout_weight="4"
+         />
+
+    <TextView
+        android:id="@+id/tv_item_person_info_list_current"
+        android:textColor="#666666"
+        style="@style/resources_main_title"
+        android:layout_weight="3"
+         />
+
+    <TextView
+        android:id="@+id/tv_item_person_info_list_md"
+        android:textColor="#666666"
+        style="@style/resources_main_title"
+        android:layout_weight="4"
+        />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+       android:layout_height="1dp"
+        android:background="#A9C6C9"/>
+</LinearLayout>

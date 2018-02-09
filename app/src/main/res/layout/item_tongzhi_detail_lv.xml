@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:padding="7.1dp"
+        android:id="@+id/item_tongzhi_detail_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <TextView
+            android:textColor="#666666"
+            android:id="@+id/item_tongzhi_detail_num_tv"
+            style="@style/gradeate_list_titletext"
+            android:layout_width="0dp"
+            android:layout_weight="0.9"
+            android:gravity="center"
+            />
+        <TextView
+            android:textColor="#666666"
+            android:id="@+id/item_tongzhi_detail_name_tv"
+            style="@style/gradeate_list_titletext"
+            android:layout_width="0dp"
+            android:layout_weight="1.8"
+            android:gravity="center"
+            />
+    </LinearLayout >
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#A9C6C9"/>
+</LinearLayout>

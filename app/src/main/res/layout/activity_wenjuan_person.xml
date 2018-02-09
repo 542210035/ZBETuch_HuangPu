@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    xmlns:ptr="http://schemas.android.com/tools"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/shape_homepage_title_rl"
+        >
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:text="个人信息列表"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RadioGroup
+            android:id="@+id/my_group"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/btn_weicha_rg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_ziyuan_detaillist"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="未查" />
+
+            <RadioButton
+                android:id="@+id/btn_yicha_rg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_ziyuan_detaillist"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="5dp"
+                android:layout_marginLeft="12dp"
+                android:text="已查" />
+        </RadioGroup>
+
+
+
+
+        <TextView
+            android:id="@+id/lblNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:textColor="#fff"
+            android:textSize="15sp"/>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+
+
+        <LinearLayout
+            android:padding="5dp"
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/title2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:textColor="#000"
+                android:visibility="gone"
+                style="@style/gradeate_list_titletext"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:text="编号"
+                />
+
+            <TextView
+                android:textColor="#000"
+                style="@style/gradeate_list_titletext"
+                android:layout_width="0dp"
+                android:layout_weight="1.2"
+                android:gravity="center"
+                android:text="姓名" />
+
+            <TextView
+                android:textColor="#000"
+                style="@style/gradeate_list_titletext"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:text="性别" />
+
+            <TextView
+                android:textColor="#000"
+                style="@style/gradeate_list_titletext"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="街道" />
+            <TextView
+                android:textColor="#000"
+                style="@style/gradeate_list_titletext"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="居委" />
+            <TextView
+                android:textColor="#000"
+                style="@style/gradeate_list_titletext"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="户籍地址" />
+            <TextView
+                android:textColor="#000"
+                android:visibility="gone"
+                android:id="@+id/jtcysl_tv"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="10sp"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:text="家庭成员数量" />
+
+
+        </LinearLayout>
+
+
+
+        <com.handmark.pulltorefresh.library.PullToRefreshListView
+            android:id="@+id/pull_down_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:cacheColorHint="#000000"
+            android:divider="#19000000"
+            android:fastScrollEnabled="false"
+            android:footerDividersEnabled="true"
+            android:smoothScrollbar="true"
+            ptr:ptrAnimationStyle="rotate"></com.handmark.pulltorefresh.library.PullToRefreshListView>
+
+    </LinearLayout>
+
+</LinearLayout>

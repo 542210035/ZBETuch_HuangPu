@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:ptr="http://schemas.android.com/tools"
+    tools:context="com.youli.zbetuch_huangpu.activity.RecruitActivity"
+    android:background="#dddddd"
+    >
+
+    <RelativeLayout
+        android:background="@drawable/shape_homepage_title_rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        >
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#fff"
+            android:layout_margin="6dp"
+            android:background="@drawable/xz"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:text="@string/zpgl_title"
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+
+            />
+    </RelativeLayout>
+
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/lv_my_zpgl"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:cacheColorHint="#000000"
+        android:divider="#19000000"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="true"
+        android:smoothScrollbar="true"
+        ptr:ptrAnimationStyle="rotate"/>
+
+
+
+</LinearLayout>

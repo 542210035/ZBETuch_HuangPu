@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeeeee"
+    android:orientation="vertical" >
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_homepage_title_rl">
+        <TextView
+            android:textColor="#fff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="专项调查"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:fadeScrollbars="false"
+                android:alwaysDrawnWithCache="true"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:id="@+id/llDuty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:cacheColorHint="@android:color/transparent"
+                        android:orientation="vertical"
+                        android:theme="@android:style/Theme.Translucent" >
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp">
+
+            <Button
+                android:textColor="#fff"
+                android:id="@+id/btn_star_question"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:background="@drawable/selector_wenjuan_detail_btn"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:visibility="gone"
+                android:text="开始答题 "
+                 />
+
+            <Button
+                android:textColor="#fff"
+                android:id="@+id/btn_up_question"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:background="@drawable/selector_wenjuan_detail_btn"
+         		android:visibility="gone"
+                android:layout_marginLeft="20dp"
+                android:text="上一题 "
+                 />
+
+            <Button
+                android:textColor="#fff"
+                android:id="@+id/btn_up_wenjuan"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/selector_wenjuan_detail_btn"
+                android:layout_marginLeft="20dp"
+                android:visibility="gone"
+                android:text="提交"
+                 />
+
+            <Button
+                android:textColor="#fff"
+                android:id="@+id/btn_next_question"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:background="@drawable/selector_wenjuan_detail_btn"
+        		android:visibility="gone"
+                android:layout_marginLeft="20dp"
+                android:text="下一题 "
+               />
+
+            <Button
+                android:textColor="#fff"
+                android:id="@+id/btn_all"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:background="@drawable/selector_wenjuan_detail_btn"
+                android:layout_marginLeft="20dp"
+                android:visibility="gone"
+                android:text="查看全部 "
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

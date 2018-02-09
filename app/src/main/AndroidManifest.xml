@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.youli.zbetuch_huangpu">
+
+    <!-- WebView 使用权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- 用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 用于访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入缓存定位数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 图片裁剪临时存储 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 用于申请调用A-GPS模块 -->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <!-- 用于申请获取蓝牙信息进行室内定位 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!-- 调用相机进行拍照（仅UI部分需要） -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:name=".utils.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/shhp"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon">
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.youli.zbetuch_huangpu.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".activity.LoginActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.HomePageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AdminInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FunctionListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ZiyuandiaochaActivity"
+            android:screenOrientation="portrait" /> <!-- 资源调查 -->
+        <activity
+            android:name=".activity.ZiyuanDetailListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" /> <!-- 资源调查人员列表 -->
+        <activity
+            android:name=".activity.ShiwuyeDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SpecialDiaochaActivity"
+            android:screenOrientation="portrait"> <!-- 专项调查 -->
+        </activity>
+        <activity
+            android:name=".activity.OvertimeDialogActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/DialogActivityTheme"> <!-- 登录超时的对话框界面 -->
+        </activity>
+        <activity
+            android:name=".naire.ShowWenJuanActivity"
+            android:screenOrientation="portrait"> <!-- 专项调查 -->
+        </activity>
+        <activity
+            android:name=".naire.WenJuanPersonActivity"
+            android:screenOrientation="portrait" /> <!-- 问卷被调查人 -->
+        <activity
+            android:name=".naire.ShowPersionDetailInfo"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ActivityDialogStyle"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".naire.WenJuanDetailActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".naire.WenJuanRegisterInfo"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".naire.ShowWenJuanMarkActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ActivityDialogStyle"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".naire.ShowPersionHistoryActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".naire.ShowPersionHistoryList"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".activity.MeetManageActivity"
+            android:screenOrientation="portrait" /> <!-- 会议管理 -->
+        <activity
+            android:name=".activity.MeetDetailActivity"
+            android:screenOrientation="portrait" /> <!-- 会议详情 -->
+        <activity
+            android:name=".activity.InspectorActivity"
+            android:screenOrientation="portrait" /> <!-- 督察督办 -->
+        <activity
+            android:name=".activity.NeedWorkActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+
+        <service android:name=".naire.PersonService">
+            <intent-filter>
+                <action android:name="com.fc.person.newservice.PersonService" />
+            </intent-filter>
+        </service>
+        <service android:name=".naire.MainService">
+            <intent-filter>
+                <action android:name="com.fc.main.newservice.MainService" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".activity.NoticeBulletin"
+            android:screenOrientation="portrait" /> <!-- 通知公告 -->
+        <activity
+            android:name=".activity.ContentActivity"
+            android:screenOrientation="portrait" /> <!-- 通知公告内容 -->
+        <activity
+            android:name=".activity.InspectorDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ActivityDialogStyle" /> <!-- 督察督办详情 -->
+        <activity
+            android:name=".activity.MyFollowActivity"
+            android:screenOrientation="portrait" /> <!-- 我的关注 -->
+
+        <activity
+            android:name=".activity.NeedWebActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PolicyQueryActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden"> <!-- 政策查询 -->
+        </activity>
+        <activity
+            android:name=".activity.AdminPicActivity"
+            android:screenOrientation="portrait" /> <!-- 头像 -->
+
+        <activity
+            android:name=".activity.PersonalInfoQuery"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".activity.OperationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PersonInfoListActivity"
+            android:screenOrientation="portrait" /> <!-- 个人信息列表 -->
+        <activity
+            android:name=".activity.ModifyPassword"
+            android:screenOrientation="portrait" /> <!-- 修改密码 -->
+
+        <activity
+            android:name=".activity.PersonDetaileInfoActivity"
+            android:screenOrientation="portrait" /> <!-- 个人信息 -->
+
+        <activity
+            android:name=".activity.DataTongjiActivity"
+            android:screenOrientation="portrait" /> <!-- 数据统计 -->
+
+        <activity
+            android:name=".activity.RecruitActivity"
+            android:screenOrientation="portrait" /> <!-- 招聘管理 -->
+        <activity
+            android:name=".activity.OccupationActivity"
+            android:screenOrientation="portrait" /> <!-- 职业介绍 -->
+        <activity
+            android:name=".activity.CompanyActivity"
+            android:screenOrientation="portrait" /> <!-- 招聘单位信息 -->
+        <activity
+            android:name=".activity.Mail_Activity"
+            android:screenOrientation="portrait" /> <!-- 邮件管理 -->
+        <activity
+            android:name=".activity.CheCkMailActivity"
+            android:screenOrientation="portrait" /> <!-- 查看邮件 -->
+        <activity
+            android:name=".activity.PostActivity"
+            android:screenOrientation="portrait" /> <!-- 岗位信息 -->
+        <activity android:name=".activity.AdoptActivity"
+            android:screenOrientation="portrait" /> <!-- 通过岗位信息 -->
+    </application>
+
+</manifest>

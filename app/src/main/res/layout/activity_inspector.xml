@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:ptr="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/shape_homepage_title_rl"
+        >
+
+        <Button
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:id="@+id/inspector_new_btn"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/button_inspector_selector"
+
+            />
+
+        <TextView
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="督 察 督 办"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:visibility="gone"
+            android:text="共20条"
+            android:id="@+id/inspector_num_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:background="@drawable/title2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textColor="#000"
+            android:paddingLeft="3dp"
+            style="@style/resources_main_title"
+            android:layout_width="wrap_content"
+            android:text="编号" />
+
+        <TextView
+            android:textColor="#000"
+            style="@style/resources_main_title"
+            android:layout_weight="3"
+            android:text="工作名称" />
+
+        <TextView
+            android:textColor="#000"
+            style="@style/resources_main_title"
+            android:layout_weight="3"
+            android:text="创建时间" />
+
+        <TextView
+            android:textColor="#000"
+            style="@style/resources_main_title"
+            android:layout_weight="3"
+            android:text="完成时间" />
+
+        <TextView
+            android:textColor="#000"
+            style="@style/resources_main_title"
+            android:layout_weight="2"
+            android:text="完成状态" />
+
+
+
+    </LinearLayout>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/lv_inspector"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:cacheColorHint="#000000"
+        android:divider="#19000000"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="true"
+        android:smoothScrollbar="true"
+        ptr:ptrAnimationStyle="rotate"></com.handmark.pulltorefresh.library.PullToRefreshListView>
+
+</LinearLayout>

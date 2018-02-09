@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/shape_homepage_title_rl"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="政 策 查 询"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:gravity="center"
+            android:textColor="#000"
+            android:padding="5dp"
+            android:layout_weight="1.5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="政策类别"/>
+
+        <Spinner
+            android:layout_gravity="center"
+            android:id="@+id/policy_query_spinner"
+            android:layout_weight="1.8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/myspinner_style"
+            android:spinnerMode="dialog"/>
+        <TextView
+            android:gravity="center"
+            android:textColor="#000"
+            android:padding="5dp"
+            android:layout_weight="1.2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="关键字"/>
+
+        <EditText
+            android:singleLine="true"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:background="@drawable/shape_ziyuan_detail_et"
+            android:layout_gravity="center"
+            android:id="@+id/policy_query_et"
+            android:layout_weight="1.8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginRight="5dp"
+            />
+        <Button
+            android:enabled="false"
+            android:layout_gravity="center"
+            android:textColor="#fff"
+            android:id="@+id/policy_query_btn"
+            android:background="@drawable/button_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:text="查询"/>
+    </LinearLayout>
+
+    <ExpandableListView
+        android:dividerHeight="0.8dp"
+        android:divider="#eeeeee"
+        android:groupIndicator="@null"
+        android:id="@+id/policy_query_elv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ExpandableListView>
+    
+</LinearLayout>

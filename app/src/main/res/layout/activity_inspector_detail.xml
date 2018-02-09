@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_inspector_detail_ll"
+    android:padding="1dp"
+    xmlns:ptr="http://schemas.android.com/tools" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/shape_homepage_title_rl"
+        >
+
+        <TextView
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="完 成 情 况"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:visibility="gone"
+            android:text="共20条"
+            android:id="@+id/inspector_detail_num_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:background="@drawable/title2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:visibility="gone"
+            android:textColor="#000"
+            android:paddingLeft="3dp"
+            style="@style/resources_main_title"
+            android:layout_width="wrap_content"
+            android:text="编号" />
+
+        <TextView
+            android:textColor="#000"
+            style="@style/resources_main_title"
+            android:layout_weight="2"
+            android:text="姓名" />
+
+        <TextView
+            android:textColor="#000"
+            style="@style/resources_main_title"
+            android:layout_weight="2"
+            android:text="状态" />
+
+        <TextView
+            android:textColor="#000"
+            style="@style/resources_main_title"
+            android:layout_weight="5"
+            android:text="备注" />
+
+        <TextView
+            android:textColor="#000"
+            style="@style/resources_main_title"
+            android:layout_weight="3.5"
+            android:text="时间" />
+
+
+
+    </LinearLayout>
+
+    <!--<com.handmark.pulltorefresh.library.PullToRefreshListView-->
+        <!--android:id="@+id/lv_inspector_detail"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:cacheColorHint="#000000"-->
+        <!--android:divider="#19000000"-->
+        <!--android:fastScrollEnabled="false"-->
+        <!--android:footerDividersEnabled="true"-->
+        <!--android:smoothScrollbar="true"-->
+        <!--ptr:ptrAnimationStyle="rotate"></com.handmark.pulltorefresh.library.PullToRefreshListView>-->
+
+    <ListView
+    android:id="@+id/lv_inspector_detail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:cacheColorHint="#000000"
+    android:divider="#19000000"
+    android:fastScrollEnabled="false"
+    android:footerDividersEnabled="true"
+    android:smoothScrollbar="true"
+ ></ListView>
+
+    <WebView
+        android:visibility="gone"
+        android:id="@+id/wv_inspector_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></WebView>
+
+</LinearLayout>

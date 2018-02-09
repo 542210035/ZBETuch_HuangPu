@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="modi">
+        <item> 全部</item>
+        <item> 有劳动收入</item>
+        <item>领取证照</item>
+        <item>临时商贩和修配摊</item>
+        <item>各类帮工</item>
+        <item>家庭手工业</item>
+        <item>各类保险及业务代理人</item>
+        <item>有投资收入</item>
+        <item>患严重疾病</item>
+        <item>残疾</item>
+        <item>精神类疾病</item>
+        <item>死亡</item>
+        <item>入学</item>
+        <item>出国出境</item>
+        <item>正在培训</item>
+        <item>正在求职</item>
+        <item>集体户口</item>
+        <item>移居境外</item>
+        <item>移居市外</item>
+        <item>照顾家属</item>
+        <item>闲散在家</item>
+        <item>人户分离</item>
+        <item>无地址，查无此人</item>
+        <item>服兵役</item>
+        <item>判刑，劳动教养</item>
+        <item>失踪</item>
+        <item>居住证A(包括居留证)</item>
+        <item>超龄</item>
+        <item>其他</item>
+        <item>农业耕作</item>
+        <item>从事农林牧副渔业</item>
+    </string-array>
+
+    <string-array name="quxian">
+        <item>黄浦区</item>
+
+    </string-array>
+
+    <string-array name="jwnull">
+        <item>全部</item>
+        <item>居委不明</item>
+        <item>居委为空</item>
+
+    </string-array>
+    <string-array name="jwall">
+        <item>全部</item>
+    </string-array>
+    <!--<string-array name="juwei">-->
+        <!--<item>请选择</item>-->
+        <!--<item>海园居委</item>-->
+        <!--<item>景华居委</item>-->
+        <!--<item>白乐居委</item>-->
+    <!--</string-array>-->
+
+        <string-array name="spinner_sex">
+            <item>全部</item>
+            <item>男</item>
+            <item>女</item>
+        </string-array>
+        <!--<string-array name="spinner_identifying">-->
+            <!--<item>请选择</item>-->
+            <!--<item>应届毕业生</item>-->
+            <!--<item>启航人员</item>-->
+            <!--<item>就业困难人员</item>-->
+            <!--<item>刑解人员</item>-->
+            <!--<item>戒毒人员</item>-->
+            <!--<item>零就业家庭</item>-->
+        <!--</string-array>-->
+        <string-array name="spinner_status">
+            <item>全部</item>
+            <item>就业</item>
+            <item>失业</item>
+            <item>无业</item>
+            <item>养老</item>
+            <item>农村富余</item>
+            <item>农村就业</item>
+        </string-array>
+        <string-array name="spinner_current_intent">
+            <item>全部</item>
+            <item>无需意向分类</item>
+            <item>有创业意向</item>
+            <item>就业条件较好</item>
+            <item>就业条件一般</item>
+        </string-array>
+
+        <!-- 失业调查下的摸底情况 -->
+        <string-array name="personmodishiye">
+            <item>请选择</item>
+            <item>有劳动收入</item>
+            <item>移居境外</item>
+            <item>死亡</item>
+            <item>移居市外</item>
+            <item>入学</item>
+            <item>服兵役</item>
+            <item>判刑、劳动教养</item>
+            <item>正在培训</item>
+            <item>积极求职</item>
+        </string-array>
+        <!-- 无业调查下的摸底情况 -->
+        <string-array name="personmodiwuye">
+            <item>请选择</item>
+            <item>有劳动收入</item>
+            <item>领取证照</item>
+            <item>临时商贩和修配摊</item>
+            <item>各类帮工</item>
+            <item>家庭手工业</item>
+            <item>各类保险及业务代理人</item>
+            <item>有投资收入</item>
+            <item>患严重疾病</item>
+            <item>死亡</item>
+            <item>入学</item>
+            <item>出国出境</item>
+            <item>正在培训</item>
+            <item>正在求职</item>
+            <item>集体户口</item>
+            <item>移居境外</item>
+            <item>移居市外</item>
+            <item>照顾家属</item>
+            <item>闲散在家</item>
+            <item>人户分离</item>
+            <item>无地址、查无此人</item>
+            <item>服兵役</item>
+            <item>判刑、劳动教养</item>
+            <item>失踪</item>
+            <item>居住证A（包括居留证）</item>
+            <item>超龄</item>
+            <item>其他</item>
+            <item>农业耕作</item>
+            <item>从事农林牧副渔业</item>
+        </string-array>
+
+        <!--上面是临时数据-->
+
+    <string-array name="resources_shiye_status">
+        <item>请选择</item>
+        <item>有劳动收入</item>
+        <item>移居境外</item>
+        <item>死亡</item>
+        <item>移居市外</item>
+        <item>入学</item>
+        <item>服兵役</item>
+        <item>判刑、劳动教养</item>
+        <item>正在培训</item>
+        <item>积极求职</item>
+
+    </string-array>
+
+    <string-array name="resources_wuye_status">
+        <item>请选择</item>
+        <item>有劳动收入</item>
+        <item>领取证照</item>
+        <item>临时商贩和修配摊</item>
+        <item>各类帮工</item>
+        <item>家庭手工业</item>
+        <item>各类保险及业务代理人</item>
+        <item>有投资收入</item>
+        <item>患严重疾病</item>
+        <item>残疾</item>
+        <item>精神类疾病</item>
+        <item>死亡</item>
+        <item>入学</item>
+        <item>出国出境</item>
+        <item>正在培训</item>
+        <item>正在求职</item>
+        <item>集体户口</item>
+        <item>移居境外</item>
+        <item>移居市外</item>
+        <item>照顾家属</item>
+        <item>闲散在家</item>
+        <item>人户分离</item>
+        <item>无地址、查无此人</item>
+        <item>服兵役</item>
+        <item>判刑、劳动教养</item>
+        <item>失踪</item>
+        <item>居住证A(包括居留证)</item>
+        <item>超龄</item>
+        <item>其他</item>
+        <item>农业耕作</item>
+        <item>从事农林牧副渔业</item>
+    </string-array>
+    <string-array name="resources_wuye_status_ren">
+        <item>请选择</item>
+        <item>有劳动收入</item>
+        <item>领取证照</item>
+        <item>临时商贩和修配摊</item>
+        <item>各类帮工</item>
+        <item>家庭手工业</item>
+        <item>各类保险及业务代理人</item>
+        <item>有投资收入</item>
+        <item>患严重疾病</item>
+        <item>残疾</item>
+        <item>精神类疾病</item>
+        <item>死亡</item>
+        <item>入学</item>
+        <item>出国出境</item>
+        <item>正在培训</item>
+        <item>正在求职</item>
+        <item>集体户口</item>
+        <item>移居境外</item>
+        <item>移居市外</item>
+        <item>照顾家属</item>
+        <item>闲散在家</item>
+        <item>无地址、查无此人</item>
+        <item>服兵役</item>
+        <item>判刑、劳动教养</item>
+        <item>失踪</item>
+        <item>居住证A(包括居留证)</item>
+        <item>超龄</item>
+        <item>其他</item>
+        <item>农业耕作</item>
+        <item>从事农林牧副渔业</item>
+    </string-array>
+
+    <string-array name="resources_wuye_yixiang">
+        <item>请选择</item>
+        <item>无需意向分类</item>
+        <item>有创业意向</item>
+        <item>就业条件较好</item>
+        <item>就业条件一般</item>
+    </string-array>
+
+</resources>
