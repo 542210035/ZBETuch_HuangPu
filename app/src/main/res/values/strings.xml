@@ -9,4 +9,12 @@
     <string name="yjgl_title">邮件管理</string>
     <string name="zphdwxx_zpgwxx_title">招聘岗位信息</string>
     <string name="zphdwxx_msxx_title">面试信息</string>
+    <string name="app_namee">静安区事业单位大调研调查问卷</string>
+    <string name="soft_update_no">已是最新版本</string>
+    <string name="soft_update_title">版本更新</string>
+    <string name="soft_update_info">有最新版本，是否更新</string>
+    <string name="soft_update_updatebtn">现在更新</string>
+    <string name="soft_update_later">以后更新</string>
+    <string name="soft_updating">版本更新</string>
+    <string name="soft_update_cancel">取消</string>
 </resources>

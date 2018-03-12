@@ -131,15 +131,12 @@ public class ShowWenJuanActivity extends BaseActivity implements IActivity{
                             lblNum.setText("共有0篇");
                         }
                     }
-
                     typeAdapter.notifyDataSetChanged();
-
                 }
 
                 if (lv.isRefreshing()) {
                     lv.onRefreshComplete();
                 }
-
                 break;
 
             default:
@@ -154,12 +151,9 @@ public class ShowWenJuanActivity extends BaseActivity implements IActivity{
                                 long arg3) {
             // TODO Auto-generated method stub
             Intent intent = new Intent(context, WenJuanPersonActivity.class);
-            intent.putExtra("id",
-                    ((WenJuanType) typeAdapter.getItem(position - 1)).getID());
+            intent.putExtra("id", ((WenJuanType) typeAdapter.getItem(position - 1)).getID());
             intent.putExtra("ISJYSTATUS", wentJuanTypes.get(position-1).isISJYSTATUS());
-            MainTools.map.put("wenjuaninfo",
-                    (WenJuanType) typeAdapter.getItem(position - 1));
-
+            MainTools.map.put("wenjuaninfo",(WenJuanType) typeAdapter.getItem(position - 1));
             startActivity(intent);
         }
 
@@ -181,8 +175,7 @@ public class ShowWenJuanActivity extends BaseActivity implements IActivity{
         data.put("page", index + "");
         data.put("rows", "20");
         params.put("data", data);
-        PersonTask task = new PersonTask(
-                PersonTask.WENJUANACTIVITY_GET_WENJUANINFO, params);
+        PersonTask task = new PersonTask(PersonTask.WENJUANACTIVITY_GET_WENJUANINFO, params);
         PersonService.newTask(task);
     }
 

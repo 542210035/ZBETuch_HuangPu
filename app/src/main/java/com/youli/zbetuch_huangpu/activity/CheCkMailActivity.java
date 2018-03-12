@@ -170,6 +170,7 @@ public class CheCkMailActivity extends BaseActivity {
                             weather = checkMailInfo.getFilelist();  //请求的二层json数据
                             Log.e("请求的二层json数据", "" + weather.size());
                             msg.what = SUCCEED;
+
                         } else {
                             msg.what = SUCCEED_NODATA;
                         }

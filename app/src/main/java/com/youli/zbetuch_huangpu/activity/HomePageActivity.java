@@ -50,6 +50,8 @@ import java.util.List;
 
 import okhttp3.Response;
 
+import static android.telephony.TelephonyManager.PHONE_TYPE_GSM;
+
 
 //首页
 public class HomePageActivity extends CheckPermissionsActivity implements View.OnClickListener{
@@ -85,6 +87,7 @@ public class HomePageActivity extends CheckPermissionsActivity implements View.O
     private ImageView myFollowIv;//我的关注
     private ImageView zydcIv;//资源调查
     private ImageView zyjsIv;//职业介绍
+    private ImageView cyzd;//创业培训
     private TextView tvJdu,tvWdu,tvGdu;//经度，纬度，高度
 
     private PullToRefreshScrollView psv;
@@ -239,6 +242,7 @@ public class HomePageActivity extends CheckPermissionsActivity implements View.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
 
+
         //注册事件
         EventBus.getDefault().register(this);
 
@@ -267,6 +271,8 @@ public class HomePageActivity extends CheckPermissionsActivity implements View.O
         notice.setOnClickListener(this);
         ivHead= (CircleImageView) findViewById(R.id.iv_activity_homepage_head);
         ivHead.setOnClickListener(this);
+        cyzd= (ImageView) findViewById(R.id.cyzd);
+        cyzd.setOnClickListener(this);
         meetManageIv= (ImageView) findViewById(R.id.homepage_meet_manage_iv);
         meetManageIv.setOnClickListener(this);
         needWorkIv= (ImageView) findViewById(R.id.homepage_need_work_iv);
@@ -385,7 +391,6 @@ public class HomePageActivity extends CheckPermissionsActivity implements View.O
                                             msg.what=SUCCESS_ADMIN_INFO;
                                         }catch(Exception e){
                                             msg.what=OVERTIME;
-
                                         }
                                     }
                                 } catch (IOException e) {
@@ -528,12 +533,11 @@ public class HomePageActivity extends CheckPermissionsActivity implements View.O
                 startActivity(intent);
                 break;
 
-            //通知公告
-            case R.id.notice:
+
+            case R.id.notice:                    //通知公告
                 intent=new Intent(this,NoticeBulletin.class);
                 startActivity(intent);
                 break;
-
             case R.id.homepage_meet_manage_iv://会议管理
                 intent = new Intent(this,MeetManageActivity.class);
                 startActivity(intent);
@@ -563,6 +567,10 @@ public class HomePageActivity extends CheckPermissionsActivity implements View.O
 
             case R.id.homepage_yjgl_iv://邮件管理
                 intent=new Intent(this,Mail_Activity.class);
+                startActivity(intent);
+                break;
+            case R.id.cyzd://创业培训
+                intent=new Intent(this,GuidanceActivity.class);
                 startActivity(intent);
                 break;
         }
@@ -824,7 +832,10 @@ public class HomePageActivity extends CheckPermissionsActivity implements View.O
     private boolean getImei(String adminImei){
 
         TelephonyManager tm = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
-        String imei = tm.getDeviceId();
+        String imei = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+            imei = tm.getDeviceId(PHONE_TYPE_GSM);
+        }
 
         if(!TextUtils.equals(adminImei,imei)){
             Intent i=new Intent(mContext,OvertimeDialogActivity.class);

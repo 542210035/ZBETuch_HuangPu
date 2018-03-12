@@ -30,9 +30,7 @@ public class ContentActivity extends BaseActivity {
     private void init(){
         myWebView= (WebView) findViewById(R.id.Mywebview);
         tv_neirong= (TextView) findViewById(R.id.tv_neirong);
-
         contentStr=getIntent().getStringExtra("Content");
-
         String b=getIntent().getStringExtra("Nr");
         tv_neirong.setText(b);
 

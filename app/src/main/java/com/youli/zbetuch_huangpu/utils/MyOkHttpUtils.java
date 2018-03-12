@@ -21,14 +21,12 @@ public class MyOkHttpUtils {
     //mdiatype 这个需要和服务端保持一致
     private static final MediaType MEDIA_TYPE_JSON = MediaType.parse("application/x-www-form-urlencoded; charset=utf-8");
 
-
 //   public static final String BaseUrl="http://web.youli.pw:8088";
-    public static final String BaseUrl="http://10.200.0.51:80";
+//    public static final String BaseUrl="http://10.200.0.51:80";
 
 //    public static final String BaseUrl="http://192.168.191.1:89";
 
-//    public static final String BaseUrl="http://192.168.191.3:8088";
-
+    public static final String BaseUrl="http://192.168.191.2:8088";
 
     public static OkHttpClient okHttpClient=null;
 
@@ -36,11 +34,8 @@ public class MyOkHttpUtils {
 
     //懒汉
     private static synchronized OkHttpClient getInstance(){
-
           if(okHttpClient==null){
-
               okHttpClient=new OkHttpClient();
-
           }
         cookies=SharedPreferencesUtils.getString("cookie");
           return  okHttpClient;
@@ -58,8 +53,6 @@ public class MyOkHttpUtils {
 
         Request request=new Request.Builder().addHeader("cookie",cookies).url(url).build();
 
-
-
         Response response=null;
 
         try {
@@ -68,7 +61,6 @@ public class MyOkHttpUtils {
             e.printStackTrace();
             return null;
         }
-
         return response;
 
     }

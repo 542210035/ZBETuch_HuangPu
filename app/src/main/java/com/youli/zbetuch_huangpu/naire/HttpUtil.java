@@ -63,8 +63,6 @@ public class HttpUtil {
 	public static String postRequest(String url, Map<String, String> data)
 			throws ClientProtocolException, IOException {
 
-		Log.e("2017/10/24","来来来来了");
-
 		HttpClient client = new DefaultHttpClient();
 		HttpPost post = new HttpPost(MyOkHttpUtils.BaseUrl+ url);
 		try {

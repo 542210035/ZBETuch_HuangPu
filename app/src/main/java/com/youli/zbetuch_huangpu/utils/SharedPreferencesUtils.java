@@ -3,7 +3,6 @@ package com.youli.zbetuch_huangpu.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-
 public class SharedPreferencesUtils {
     public static void putString(String key,String content) {
         SharedPreferences sp = MyApplication.getContext().getSharedPreferences("userInfo.txt", Context.MODE_PRIVATE);

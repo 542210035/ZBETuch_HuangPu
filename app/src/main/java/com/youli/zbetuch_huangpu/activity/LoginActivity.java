@@ -73,6 +73,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
 // 更新apk
 //        UpdateManager manager = new UpdateManager(LoginActivity.this);
 //        manager.checkUpdate();
+        // 更新apk
+        UpdateManager manager = new UpdateManager(LoginActivity.this);
+        manager.checkUpdate();
         locationManager = (LocationManager) this
                 .getSystemService(Context.LOCATION_SERVICE);
         initUI();
@@ -90,9 +93,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
 
         et_userName = (EditText) findViewById(R.id.et_user_name);
         String localUserName = SharedPreferencesUtils.getString("userName");
-        if (localUserName != null) {
-            et_userName.setText(localUserName);
-        }
+
+        //注释记住账号
+//        if (localUserName != null) {
+//            et_userName.setText(localUserName);
+//        }
         et_userPassword = (EditText) findViewById(R.id.et_user_password);
         btn_login = (Button) findViewById(R.id.btn_login);
 

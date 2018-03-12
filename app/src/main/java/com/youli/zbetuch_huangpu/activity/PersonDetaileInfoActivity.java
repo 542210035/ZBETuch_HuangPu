@@ -43,7 +43,6 @@ import okhttp3.Response;
 
 
 /**
- * Created by liutao on 2018/1/5.
  *
  * 个人信息界面
  */
@@ -78,12 +77,8 @@ public class PersonDetaileInfoActivity extends FragmentActivity {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-
             switch (msg.what){
-
                 case SUCCEED:
-
-
                     if(TextUtils.equals(msg.obj+"","True")){
                         Toast.makeText(mContext,"关注成功!",Toast.LENGTH_SHORT).show();
                     }else if(TextUtils.equals(msg.obj+"","False")){

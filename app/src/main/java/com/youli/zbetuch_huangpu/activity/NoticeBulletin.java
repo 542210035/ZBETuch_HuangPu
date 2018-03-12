@@ -198,9 +198,7 @@ public class NoticeBulletin extends BaseActivity implements AdapterView.OnItemCl
             lv.setAdapter(commonAdapter);
 
         }else{
-
             commonAdapter.notifyDataSetChanged();
-
         }
         if (lv.isRefreshing()) {
             lv.onRefreshComplete();

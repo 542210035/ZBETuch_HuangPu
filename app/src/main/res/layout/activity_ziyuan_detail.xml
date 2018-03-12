@@ -133,6 +133,56 @@
             android:textSize="15sp"/>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="居    委："
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <EditText
+
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:gravity="center_vertical"
+            android:textSize="15sp"
+            android:padding="2dp"
+            android:background="@drawable/shape_ziyuan_detail_et"
+            android:visibility="gone"
+
+            />
+        <Spinner
+            android:layout_gravity="center"
+            android:id="@+id/ziyuan_detail_jw"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:gravity="center_vertical"
+            android:padding="2dp"
+            style="@style/myspinner_style"
+            android:spinnerMode="dialog"/>
+
+
+        <Button
+            android:textColor="#fff"
+            android:id="@+id/ziyuan_detail_query_btn_jw"
+            android:layout_width="65dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/button_selector"
+            android:text="查询"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+
     <com.handmark.pulltorefresh.library.PullToRefreshScrollView
         android:id="@+id/hsv_job_info"
         android:layout_width="match_parent"

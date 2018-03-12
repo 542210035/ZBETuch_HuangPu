@@ -232,7 +232,8 @@ public class ShiwuyeDetailActivity extends BaseActivity implements View.OnClickL
         if (isCheck) {
             diaochaLl.setVisibility(View.VISIBLE);
             submitBtn.setClickable(false);
-            submitBtn.setBackgroundResource(R.drawable.button_enabled);
+            submitBtn.setBackgroundResource(R.drawable.tj);
+            diaochaBtn.setBackgroundResource(R.drawable.tj);
 
             remarksEt.setFocusable(false);
             remarksEt.setText(RDInfo.getDCBZ());
@@ -531,6 +532,10 @@ public class ShiwuyeDetailActivity extends BaseActivity implements View.OnClickL
 
             response = MyOkHttpUtils.okHttpGet(url + "?MDID=" + RDInfo.getMDID() + "&DCBZ=" + remarksEt.getText().toString() +
                     "&MQZK_NEW=" + currStaStr + "&DQYX_NEW=" + currIntStr + "&DCLX=" + DCLX + "&RHFL=" + RHFL);
+
+            Log.e("2018-03-02","资源调查的提交管理员url="+url + "?MDID=" + RDInfo.getMDID() + "&DCBZ=" + remarksEt.getText().toString() +
+                    "&MQZK_NEW=" + currStaStr + "&DQYX_NEW=" + currIntStr + "&DCLX=" + DCLX + "&RHFL=" + RHFL);
+
         }else if(TextUtils.equals(mark,"address")){
 
             if (TextUtils.equals("失业",type)) {
@@ -542,7 +547,7 @@ public class ShiwuyeDetailActivity extends BaseActivity implements View.OnClickL
             }
             response = MyOkHttpUtils.okHttpGet(url);
 
-            Log.e("2017-12-18","url="+url);
+
 
         }
 

@@ -36,25 +36,16 @@ public class WenJuanPersonActivity extends BaseActivity implements IActivity{
 	private PullToRefreshListView personquery_listview;
 	//private PullDownView mPullDownView;
 	private List<WenJuanPersonInfo> wenJuanPersonInfos = new ArrayList<WenJuanPersonInfo>();
-
 	private WenJuanPersonAdapter personAdapter;
 	private TextView lblNum;
-
 	private int index = 0;
-
 	private RadioGroup rg;
 	private RadioButton rb1, rb2;
-
 	private Map<String, String> data;
-
 	public static final int REFRESH_INFO = 0;
-
 	public static final int REFRESH_PERSION_INFO = 1;
-
 	private ProgressDialog dialog;
-	
 	public static int wenJuanPersonPosition;
-
 	public static boolean isWeichaRg=true;
 	private TextView jtcyslTv;
 	public boolean myISJYSTATUS;
@@ -63,19 +54,13 @@ public class WenJuanPersonActivity extends BaseActivity implements IActivity{
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-
 		setContentView(R.layout.activity_wenjuan_person);
-		
 		myISJYSTATUS=getIntent().getBooleanExtra("ISJYSTATUS", false);
 		init();
 		initviews();
-
-		
 		rb1.setChecked(true);
 	}
 
-
-	
 	private void initviews() {
 		jtcyslTv=(TextView) findViewById(R.id.jtcysl_tv);
 		if(getIntent().getBooleanExtra("ISJYSTATUS", false)){
@@ -137,8 +122,8 @@ public class WenJuanPersonActivity extends BaseActivity implements IActivity{
 					|| null != params[1].toString().trim()) {
 				 List<WenJuanPersonInfo> newJuanPersonInfos= parseWenjuanPersonInfo(params[1]
 						.toString().trim());
-				
-				
+
+
 				if (newJuanPersonInfos.size() >0||newJuanPersonInfos.size()==0) {
 					if(index==0) {
 						wenJuanPersonInfos.clear();
@@ -201,8 +186,7 @@ public class WenJuanPersonActivity extends BaseActivity implements IActivity{
 		data.put("page", index + "");
 		data.put("rows", "20");
 		params.put("data", data);
-		PersonTask task = new PersonTask(
-				PersonTask.WENJUANACTIVITY_GET_WENJUANPERSON, params);
+		PersonTask task = new PersonTask(PersonTask.WENJUANACTIVITY_GET_WENJUANPERSON, params);
 		PersonService.newTask(task);
 	}
 

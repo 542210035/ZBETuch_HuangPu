@@ -15,16 +15,16 @@ import android.widget.TextView;
 
 import com.youli.zbetuch_huangpu.R;
 
-public class OccupationActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class OccupationActivity extends BaseActivity implements AdapterView.OnItemClickListener {
     private Context mContext=OccupationActivity.this;
     private GridView gridView;
     private Intent intent;
     private int [] itemImage=new int[]{
-            R.drawable.zpp
+            R.drawable.zpgl
     };
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_occupation);
         initView();

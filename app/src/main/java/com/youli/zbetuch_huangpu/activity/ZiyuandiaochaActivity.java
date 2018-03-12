@@ -103,7 +103,6 @@ public class ZiyuandiaochaActivity extends BaseActivity implements View.OnClickL
     }
 
     private void initViews() {
-
         noDataTv = (TextView) findViewById(R.id.ziyuandiaocha_tv_nodata);
         queryBtn = (Button) findViewById(R.id.ziyuandiaocha_query_btn);
         queryBtn.setOnClickListener(this);
@@ -193,27 +192,20 @@ public class ZiyuandiaochaActivity extends BaseActivity implements View.OnClickL
                         try {
                             Message msg = Message.obtain();
                             if (response != null) {
-
                                 if (response.body() != null) {
                                     String infoStr = response.body().string();
-
                                     Log.e("2017/11/8","infoStr="+infoStr);
-
                                     if (!TextUtils.equals(infoStr, "")) {
-
                                         Gson gson = new Gson();
                                         try {
                                             RInfoList = gson.fromJson(infoStr, new TypeToken<List<ResourcesInfo>>() {}.getType());
-
                                             msg.what = SUCCESS;
                                             msg.obj = RInfoList;
                                             mHandler.sendMessage(msg);
                                         } catch (Exception e) {
-
                                             Log.e("2017/11/13","登录超时了");
                                             msg.what=OVERTIME;
                                             mHandler.sendMessage(msg);
-
                                         }
                                     }
                                 } else {

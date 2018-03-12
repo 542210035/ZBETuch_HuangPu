@@ -113,15 +113,6 @@ public class BaseInfoFragment extends BaseVpFragment{
 //
 //            tv_FamilyName= (TextView) view.findViewById(R.id.tv_person_info_nation);//备注
 //            tv_FamilyName.setText(pInfo.get);
-
-
-
-
-
-
-
-
-
         }
 
     }

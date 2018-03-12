@@ -1,5 +1,7 @@
 package com.youli.zbetuch_huangpu.naire;
 
+import android.util.Log;
+
 import org.apache.http.client.ClientProtocolException;
 
 import java.io.IOException;
@@ -605,6 +607,7 @@ public class PersonDao {
 	}
 	public String getWenJuanPerson(Map<String, String> data) {
 		String url = "/Json/Get_Qa_UpLoad_Personnel.aspx";
+		Log.e("2018-2-24",url);
 		try {
 			String value = HttpUtil.postRequest(url, data);
 			return value;
