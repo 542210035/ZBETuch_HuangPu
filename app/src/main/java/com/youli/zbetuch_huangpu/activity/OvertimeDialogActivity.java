@@ -36,15 +36,12 @@ public class OvertimeDialogActivity extends BaseActivity{
 
         mark=getIntent().getStringExtra("type");
 
-         initViews(mark);
+        initViews(mark);
     }
 
     private void initViews(String mark){
-
         adu=new AlertDialogUtils(this,R.layout.overtime_dialog,R.style.dialog);
-
         adu.showAlertDialog();
-
         TextView tv= (TextView) adu.getAduView().findViewById(R.id.overtime_title_tv);
         if(TextUtils.equals(mark,"gps")){
             tv.setText("GPS未打开，请您重新登录！");
@@ -56,7 +53,6 @@ public class OvertimeDialogActivity extends BaseActivity{
             tv.setText("密码修改成功，请您重新登录！");
         }
 
-
         Button btnSure= (Button) adu.getAduView().findViewById(R.id.btn_overtime_sure);
         btnSure.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +63,5 @@ public class OvertimeDialogActivity extends BaseActivity{
                 startActivity(intent);
             }
         });
-
     }
-
 }

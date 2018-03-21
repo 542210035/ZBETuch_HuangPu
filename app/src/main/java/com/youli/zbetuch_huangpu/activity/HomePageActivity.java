@@ -108,6 +108,8 @@ public class HomePageActivity extends CheckPermissionsActivity implements View.O
 
     public  static String jDuStr,wDuStr;//要上传的经度和纬度
 
+    public static String imeiStr;//要上传的imei
+
     private Handler mHandler=new Handler(){
 
         @Override
@@ -121,7 +123,6 @@ public class HomePageActivity extends CheckPermissionsActivity implements View.O
                     adminInfo=(AdminInfo)msg.obj;
                     adminName=adminInfo.getNAME();
 
-
                     if(adminInfo.isSTOP()){//判断账号是否被启用
                         gpsHandler.removeCallbacks(rState);
                         Intent i=new Intent(mContext,OvertimeDialogActivity.class);
@@ -129,7 +130,7 @@ public class HomePageActivity extends CheckPermissionsActivity implements View.O
                         startActivity(i);
                         return;
                     }
-
+                    getImei();
 //                    if(!getImei(adminInfo.getIMEI())){//获取IMEI号
 //                        gpsHandler.removeCallbacks(rState);
 //                        return;
@@ -229,11 +230,8 @@ public class HomePageActivity extends CheckPermissionsActivity implements View.O
                     }else if(TextUtils.equals(msg.obj+"","False")){
                         inspectorRl.setVisibility(View.VISIBLE);
                     }
-
-
                     break;
             }
-
         }
     };
 
@@ -241,7 +239,6 @@ public class HomePageActivity extends CheckPermissionsActivity implements View.O
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
-
 
         //注册事件
         EventBus.getDefault().register(this);
@@ -255,9 +252,7 @@ public class HomePageActivity extends CheckPermissionsActivity implements View.O
         gpsHandler.post(rGps);
         gpsHandler.post(rState);
         initViews();
-
     }
-
 
     private void initViews(){
         im_mail= (ImageView) findViewById(R.id.homepage_yjgl_iv); //邮件
@@ -300,7 +295,6 @@ public class HomePageActivity extends CheckPermissionsActivity implements View.O
         //getAdminInfo();
 
         getYzy();//获取是否援助员
-
 
         psv= (PullToRefreshScrollView) findViewById(R.id.psv_homepage);
         psv.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ScrollView>() {
@@ -657,7 +651,6 @@ public class HomePageActivity extends CheckPermissionsActivity implements View.O
 
         tvGdu.setText("高度:"+location.getAltitude()+"米");
 
-
         jDuStr=location.getLongitude()+"";//要上传的经度
         wDuStr=location.getLatitude()+"";//要上传的纬度
 
@@ -667,7 +660,6 @@ public class HomePageActivity extends CheckPermissionsActivity implements View.O
         SharedPreferencesUtils.putString("jDu",String.valueOf(location.getLongitude()));//sp存经度
         SharedPreferencesUtils.putString("wDu",String.valueOf(location.getLatitude()));//sp存纬度
     }
-
 
     @Override
     public void onBackPressed() {
@@ -693,7 +685,6 @@ public class HomePageActivity extends CheckPermissionsActivity implements View.O
         builder.show();
     }
 
-
     /**
      * 判断GPS是否开启，GPS或者AGPS开启一个就认为是开启的
      *
@@ -708,11 +699,8 @@ public class HomePageActivity extends CheckPermissionsActivity implements View.O
         if (gps) {
             return true;
         }
-
         return false;
     }
-
-
     Runnable rState=new Runnable() {
         @Override
         public void run() {
@@ -734,7 +722,6 @@ public class HomePageActivity extends CheckPermissionsActivity implements View.O
                 Intent i=new Intent(mContext,OvertimeDialogActivity.class);
                 i.putExtra("type","gps");
                 startActivity(i);
-
             }
         }
     };
@@ -742,12 +729,8 @@ public class HomePageActivity extends CheckPermissionsActivity implements View.O
     Runnable rGps=new Runnable() {
         @Override
         public void run() {
-
-
             gpsHandler.postDelayed(this,getGPSTime);//刷新gps
-
             getAddress();
-
         }
     };
 
@@ -787,17 +770,12 @@ public class HomePageActivity extends CheckPermissionsActivity implements View.O
             }
         };
     };
-
-
     private void  getPic(){
-
        // http://web.youli.pw:8088/Json/GetStaffPic.aspx?staff=1
         new Thread(
-
                 new Runnable() {
                     @Override
                     public void run() {
-
                         String urlPic =MyOkHttpUtils.BaseUrl+"/Json/GetStaffPic.aspx?staff="+adminInfo.getID();
                         Response response = MyOkHttpUtils.okHttpGet(urlPic);
                         try {
@@ -813,39 +791,44 @@ public class HomePageActivity extends CheckPermissionsActivity implements View.O
                                 msg.obj = btp;
                                 msg.what = SUCCESS_ADMIN_PIC;
                                 mHandler.sendMessage(msg);
-
                             } else {
-
                                // sendProblemMessage(msg);
-
                             }
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
                     }
                 }
-
         ).start();
-
     }
 
-    private boolean getImei(String adminImei){
+//    private boolean getImei(String adminImei){
+//
+//        TelephonyManager tm = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
+//        String imei = null;
+//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+//            imei = tm.getDeviceId(PHONE_TYPE_GSM);
+//            imeiStr=imei;
+//        }
+//        Log.e("获取IMEI=",imeiStr);
+//
+//        if(!TextUtils.equals(adminImei,imei)){
+//            Intent i=new Intent(mContext,OvertimeDialogActivity.class);
+//            i.putExtra("type","imei");
+//            startActivity(i);
+//            return  false;
+//        }
+//        return  true;
+//    }
 
+    private void getImei(){
         TelephonyManager tm = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
         String imei = null;
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
             imei = tm.getDeviceId(PHONE_TYPE_GSM);
+            imeiStr=imei;
         }
-
-        if(!TextUtils.equals(adminImei,imei)){
-            Intent i=new Intent(mContext,OvertimeDialogActivity.class);
-            i.putExtra("type","imei");
-            startActivity(i);
-
-            return  false;
-        }
-
-        return  true;
+        Log.e("获取IMEI=",imeiStr);
     }
 
 }

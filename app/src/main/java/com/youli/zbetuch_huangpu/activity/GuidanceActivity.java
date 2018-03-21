@@ -40,7 +40,7 @@ public class GuidanceActivity extends BaseActivity {
                         startActivity(intent);
                         break;
                     case 1:
-                        intent=new Intent(mContext,KechengActivity.class);
+                        intent=new Intent(mContext,KechengPXActivity.class);
                         startActivity(intent);
                         break;
                     case 2:

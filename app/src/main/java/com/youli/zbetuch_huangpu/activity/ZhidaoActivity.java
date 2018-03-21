@@ -23,6 +23,7 @@ import com.youli.zbetuch_huangpu.R;
 import com.youli.zbetuch_huangpu.adapter.CommonAdapter;
 import com.youli.zbetuch_huangpu.entity.CommonViewHolder;
 import com.youli.zbetuch_huangpu.entity.CreateActivityIndo;
+import com.youli.zbetuch_huangpu.entity.CurriculumInfo;
 import com.youli.zbetuch_huangpu.utils.MyDateUtils;
 import com.youli.zbetuch_huangpu.utils.MyOkHttpUtils;
 import com.youli.zbetuch_huangpu.utils.ProgressDialogUtils;
@@ -36,7 +37,7 @@ import okhttp3.Response;
 public class ZhidaoActivity extends BaseActivity {
     private Context mContext=ZhidaoActivity.this;
     private PullToRefreshListView lv;
-    private List<CreateActivityIndo> nList=new ArrayList<CreateActivityIndo>();
+    private List<CurriculumInfo> nList=new ArrayList<CurriculumInfo>();
 
     private final int SUCCESS=10000;
     private final int NODATA=10001;
@@ -58,7 +59,7 @@ public class ZhidaoActivity extends BaseActivity {
                     if (pageIndex == 0) {
                         nList.clear();
                     }
-                    nList.addAll((List<CreateActivityIndo>) msg.obj);
+                    nList.addAll((List<CurriculumInfo>) msg.obj);
                     if (nList.size() > 0) {
 //                        tv1.setVisibility(View.GONE);
 //                        lv.setVisibility(View.VISIBLE);
@@ -144,7 +145,7 @@ public class ZhidaoActivity extends BaseActivity {
                         String infoStr = response.body().string();
                         Gson gson=new Gson();
                         try {
-                            msg.obj=gson.fromJson(infoStr,new TypeToken<List<CreateActivityIndo>>(){}.getType());
+                            msg.obj=gson.fromJson(infoStr,new TypeToken<List<CurriculumInfo>>(){}.getType());
                             Log.e("qwer","进入");
                             msg.what=SUCCESS;
                             mHandler.sendMessage(msg);
@@ -171,11 +172,11 @@ public class ZhidaoActivity extends BaseActivity {
 
 
     //adapter
-    private void lvSetAdapter(final List<CreateActivityIndo> data){
+    private void lvSetAdapter(final List<CurriculumInfo> data){
         if (commonAdapter==null){
-            commonAdapter=new CommonAdapter<CreateActivityIndo>(mContext,data,R.layout.activity_cyzd_item) {
+            commonAdapter=new CommonAdapter<CurriculumInfo>(mContext,data,R.layout.activity_cyzd_item) {
                 @Override
-                public void convert(CommonViewHolder holder, CreateActivityIndo item, final int position) {
+                public void convert(CommonViewHolder holder, CurriculumInfo item, final int position) {
                     Button btn=holder.getView(R.id.sign);
                     TextView tv2=holder.getView(R.id.tv_cyzd_2);
                     TextView tv3=holder.getView(R.id.tv_cyzd_3);

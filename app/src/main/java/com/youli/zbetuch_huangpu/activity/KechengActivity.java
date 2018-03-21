@@ -22,6 +22,7 @@ import com.youli.zbetuch_huangpu.R;
 import com.youli.zbetuch_huangpu.adapter.CommonAdapter;
 import com.youli.zbetuch_huangpu.entity.CommonViewHolder;
 import com.youli.zbetuch_huangpu.entity.CreateActivityIndo;
+import com.youli.zbetuch_huangpu.entity.CurriculumInfo;
 import com.youli.zbetuch_huangpu.utils.MyDateUtils;
 import com.youli.zbetuch_huangpu.utils.MyOkHttpUtils;
 import com.youli.zbetuch_huangpu.utils.ProgressDialogUtils;
@@ -35,7 +36,7 @@ import okhttp3.Response;
 public class KechengActivity extends BaseActivity {
     private Context mContext=KechengActivity.this;
     private PullToRefreshListView lv;
-    private List<CreateActivityIndo> nList=new ArrayList<CreateActivityIndo>();
+    private List<CurriculumInfo> nList=new ArrayList<CurriculumInfo>();
 
     private final int SUCCESS=10000;
     private final int NODATA=10001;
@@ -43,8 +44,7 @@ public class KechengActivity extends BaseActivity {
     private final int OVERTIME=10003;//登录超时
     private CommonAdapter commonAdapter;
     private int pageIndex;
-
-
+    private CreateActivityIndo craet;
 
     private Handler mHandler =new Handler(){
         @Override
@@ -56,7 +56,7 @@ public class KechengActivity extends BaseActivity {
                     if (pageIndex == 0) {
                         nList.clear();
                     }
-                    nList.addAll((List<CreateActivityIndo>) msg.obj);
+                    nList.addAll((List<CurriculumInfo>) msg.obj);
                     if (nList.size() > 0) {
 //                        tv1.setVisibility(View.GONE);
 //                        lv.setVisibility(View.VISIBLE);
@@ -86,8 +86,6 @@ public class KechengActivity extends BaseActivity {
         }
     };
 
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,19 +94,20 @@ public class KechengActivity extends BaseActivity {
     }
 
     private void initView(){
+        craet= (CreateActivityIndo) getIntent().getSerializableExtra("HDIDD");
         lv= (PullToRefreshListView) findViewById(R.id.lv_kecheng_info_list);
-        getNetWorkData(pageIndex);
+        getNetWorkData(pageIndex,craet.getHDID());
         lv.setMode(PullToRefreshBase.Mode.BOTH);
         lv.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
             @Override
             public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
                 pageIndex=0;
-                getNetWorkData(pageIndex);
+                getNetWorkData(pageIndex,craet.getHDID());
             }
             @Override
             public void onPullUpToRefresh(PullToRefreshBase<ListView> refreshView) {
                 pageIndex++;
-                getNetWorkData(pageIndex);
+                getNetWorkData(pageIndex,craet.getHDID());
             }
         });
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -122,7 +121,7 @@ public class KechengActivity extends BaseActivity {
 
 
     }
-    private void getNetWorkData(final int page){
+    private void getNetWorkData(final int page, final int hdidd){
         ProgressDialogUtils.showMyProgressDialog(mContext);
         if(page==0) {
             if (nList != null && nList.size() > 0 ) {
@@ -133,7 +132,7 @@ public class KechengActivity extends BaseActivity {
             @Override
             public void run() {
                 //http://192.168.191.2:8088/Json/CYWork/Get_CYWorkInfo.aspx?page=0&rows=10&HDFL=指导活动管理
-                String url= MyOkHttpUtils.BaseUrl+"/Json/CYWork/Get_CYWorkInfo.aspx?page="+page+"&rows=10&HDFL=培训课程管理";
+                String url= MyOkHttpUtils.BaseUrl+"/Json/CYWork/Get_CYWorkInfo.aspx?page="+page+"&rows=10&HDFL=培训课程管理&ParentId="+hdidd;
                 Log.e("----2018-3-1---","url="+url);
                 Response response= MyOkHttpUtils.okHttpGet(url);
                 Message msg=Message.obtain();
@@ -142,7 +141,7 @@ public class KechengActivity extends BaseActivity {
                         String infoStr = response.body().string();
                         Gson gson=new Gson();
                         try {
-                            msg.obj=gson.fromJson(infoStr,new TypeToken<List<CreateActivityIndo>>(){}.getType());
+                            msg.obj=gson.fromJson(infoStr,new TypeToken<List<CurriculumInfo>>(){}.getType());
                             Log.e("qwer","进入");
                             msg.what=SUCCESS;
                             mHandler.sendMessage(msg);
@@ -167,13 +166,12 @@ public class KechengActivity extends BaseActivity {
         mHandler.sendMessage(msg);
     }
 
-
     //adapter
-    private void lvSetAdapter(final List<CreateActivityIndo> data){
+    private void lvSetAdapter(final List<CurriculumInfo> data){
         if (commonAdapter==null){
-            commonAdapter=new CommonAdapter<CreateActivityIndo>(mContext,data,R.layout.activity_cyzd_item) {
+            commonAdapter=new CommonAdapter<CurriculumInfo>(mContext,data,R.layout.activity_cyzd_item) {
                 @Override
-                public void convert(CommonViewHolder holder, CreateActivityIndo item, final int position) {
+                public void convert(CommonViewHolder holder, CurriculumInfo item, final int position) {
                     Button btn=holder.getView(R.id.sign);
                     TextView tv2=holder.getView(R.id.tv_cyzd_2);
                     TextView tv3=holder.getView(R.id.tv_cyzd_3);

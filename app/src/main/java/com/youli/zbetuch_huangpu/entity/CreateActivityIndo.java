@@ -7,46 +7,49 @@ import java.io.Serializable;
  */
 
 public class CreateActivityIndo implements Serializable {
+
     /**
-     * HDID : 1
-     * HDFL : 指导活动管理
-     * HDTHEME : ceshi测试平板
-     * HDJJ : 测试
-     * HDKSDATE : 2018-01-29T00:00:00
-     * HDJSDATE : 2018-01-31T00:00:00
-     * HDADDRESS : 测试
-     * HDKBMRS : -1
-     * BZSM :
+     * HDID : 12
+     * HDFL : 培训课程管理
+     * HDTHEME : 年课程
+     * HDJJ : null
+     * HDKSDATE : null
+     * HDJSDATE : null
+     * HDADDRESS : null
+     * HDKBMRS : null
+     * BZSM : 2333
      * HDFBJD : 黄浦区
-     * LXRXM : 测试
-     * LXRDH : 13111111111
+     * LXRXM : null
+     * LXRDH : null
      * CJRID : 1
      * CJRXM : admin
-     * CJDATE : 2018-01-29T11:00:29.19
+     * CJDATE : 2018-03-19T13:42:44.28
      * TJRS : 0
      * CJRS : 0
      * HDZT : 开放
+     * PARENTID : -1
      * RecordCount : 1
      */
 
     private int HDID;
     private String HDFL;
     private String HDTHEME;
-    private String HDJJ;
-    private String HDKSDATE;
-    private String HDJSDATE;
-    private String HDADDRESS;
-    private int HDKBMRS;
+    private Object HDJJ;
+    private Object HDKSDATE;
+    private Object HDJSDATE;
+    private Object HDADDRESS;
+    private Object HDKBMRS;
     private String BZSM;
     private String HDFBJD;
-    private String LXRXM;
-    private String LXRDH;
+    private Object LXRXM;
+    private Object LXRDH;
     private int CJRID;
     private String CJRXM;
     private String CJDATE;
     private int TJRS;
     private int CJRS;
     private String HDZT;
+    private int PARENTID;
     private int RecordCount;
 
     public int getHDID() {
@@ -73,43 +76,43 @@ public class CreateActivityIndo implements Serializable {
         this.HDTHEME = HDTHEME;
     }
 
-    public String getHDJJ() {
+    public Object getHDJJ() {
         return HDJJ;
     }
 
-    public void setHDJJ(String HDJJ) {
+    public void setHDJJ(Object HDJJ) {
         this.HDJJ = HDJJ;
     }
 
-    public String getHDKSDATE() {
+    public Object getHDKSDATE() {
         return HDKSDATE;
     }
 
-    public void setHDKSDATE(String HDKSDATE) {
+    public void setHDKSDATE(Object HDKSDATE) {
         this.HDKSDATE = HDKSDATE;
     }
 
-    public String getHDJSDATE() {
+    public Object getHDJSDATE() {
         return HDJSDATE;
     }
 
-    public void setHDJSDATE(String HDJSDATE) {
+    public void setHDJSDATE(Object HDJSDATE) {
         this.HDJSDATE = HDJSDATE;
     }
 
-    public String getHDADDRESS() {
+    public Object getHDADDRESS() {
         return HDADDRESS;
     }
 
-    public void setHDADDRESS(String HDADDRESS) {
+    public void setHDADDRESS(Object HDADDRESS) {
         this.HDADDRESS = HDADDRESS;
     }
 
-    public int getHDKBMRS() {
+    public Object getHDKBMRS() {
         return HDKBMRS;
     }
 
-    public void setHDKBMRS(int HDKBMRS) {
+    public void setHDKBMRS(Object HDKBMRS) {
         this.HDKBMRS = HDKBMRS;
     }
 
@@ -129,19 +132,19 @@ public class CreateActivityIndo implements Serializable {
         this.HDFBJD = HDFBJD;
     }
 
-    public String getLXRXM() {
+    public Object getLXRXM() {
         return LXRXM;
     }
 
-    public void setLXRXM(String LXRXM) {
+    public void setLXRXM(Object LXRXM) {
         this.LXRXM = LXRXM;
     }
 
-    public String getLXRDH() {
+    public Object getLXRDH() {
         return LXRDH;
     }
 
-    public void setLXRDH(String LXRDH) {
+    public void setLXRDH(Object LXRDH) {
         this.LXRDH = LXRDH;
     }
 
@@ -191,6 +194,14 @@ public class CreateActivityIndo implements Serializable {
 
     public void setHDZT(String HDZT) {
         this.HDZT = HDZT;
+    }
+
+    public int getPARENTID() {
+        return PARENTID;
+    }
+
+    public void setPARENTID(int PARENTID) {
+        this.PARENTID = PARENTID;
     }
 
     public int getRecordCount() {

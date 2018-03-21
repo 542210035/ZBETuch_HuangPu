@@ -122,8 +122,7 @@ public class MyOkHttpUtils {
 
         getInstance();
 
-        RequestBody requestBody=new FormBody.Builder().add("sfz", userName)
-                .build();
+        RequestBody requestBody=new FormBody.Builder().add("sfz", userName).build();
 
         Request request=new Request.Builder().addHeader("cookie",cookies).url(url).post(requestBody).build();
 
@@ -135,12 +134,8 @@ public class MyOkHttpUtils {
             e.printStackTrace();
             return null;
         }
-
         return response;
-
     };
-
-
 
     //修改密码http://web.youli.pw:89/Json/Set_Pwd.aspx?pwd=123&new_pwd=321
     public static Response okHttpPostFormBody(String url, HashMap<String,String> data){

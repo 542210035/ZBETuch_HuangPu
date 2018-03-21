@@ -76,8 +76,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
         // 更新apk
         UpdateManager manager = new UpdateManager(LoginActivity.this);
         manager.checkUpdate();
-        locationManager = (LocationManager) this
-                .getSystemService(Context.LOCATION_SERVICE);
+        locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
         initUI();
 
     }
@@ -126,7 +125,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
     @Override
     public void onDestroy() {
         super.onDestroy();
-
     }
 
     @Override
@@ -183,10 +181,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
                         if(response!=null) {
                             if (response.header("Set-Cookie") != null) {
                                 String cookies = response.header("Set-Cookie").toString();
-
                                 String mycookies=cookies.substring(0,cookies.indexOf(";"));
                                 SharedPreferencesUtils.putString("cookie", mycookies);
-
                             }
                         }
                         Message msg=Message.obtain();
@@ -198,17 +194,12 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener{
                             }else{
                                 msg.what=PROBLEM;
                                 mHandler.sendMessage(msg);
-
                             }
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-
                     }
                 }
-
         ).start();
-
     }
-
 }

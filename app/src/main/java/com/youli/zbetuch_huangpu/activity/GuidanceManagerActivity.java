@@ -7,20 +7,20 @@ import android.widget.EditText;
 
 import com.youli.zbetuch_huangpu.R;
 import com.youli.zbetuch_huangpu.entity.CreateActivityIndo;
+import com.youli.zbetuch_huangpu.entity.CurriculumInfo;
 import com.youli.zbetuch_huangpu.utils.MyDateUtils;
 
 public class GuidanceManagerActivity extends BaseActivity {
     private EditText et_activity_1,et_place_2,et_startdate_3,
             et_enddate_4,et_Contacts_5,et_phone_6,
             et_number_7,et_brief_8,et_remarks_9;
-
-    private CreateActivityIndo createa;
+    private CurriculumInfo createa;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guidance_manager);
-        createa= (CreateActivityIndo) getIntent().getSerializableExtra("ZDHD");
+        createa= (CurriculumInfo) getIntent().getSerializableExtra("ZDHD");
         initView();
     }
     private void initView(){

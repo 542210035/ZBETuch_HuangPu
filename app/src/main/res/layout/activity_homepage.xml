@@ -276,7 +276,8 @@
                         android:src="@drawable/cypx"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true" />
+                        android:layout_alignParentStart="true"
+                        />
 
                     <TextView
                         android:visibility="gone"

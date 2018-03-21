@@ -224,22 +224,28 @@
             android:screenOrientation="portrait" /> <!-- 通过岗位信息 -->
         <activity
             android:name=".activity.GuidanceActivity"
-            android:screenOrientation="portrait" /><!--创业培训-->
+            android:screenOrientation="portrait" /> <!-- 创业培训 -->
 
-        <activity android:name=".activity.CreateActivity"
-            android:screenOrientation="portrait" /><!--指导活动-->
+        <activity
+            android:name=".activity.CreateActivity"
+            android:screenOrientation="portrait" /> <!-- 指导活动 -->
 
-        <activity android:name=".activity.ZhidaoActivity"
-            android:screenOrientation="portrait" /><!--培训活动-->
+        <activity
+            android:name=".activity.ZhidaoActivity"
+            android:screenOrientation="portrait" /> <!-- 培训活动 -->
 
-        <activity android:name=".activity.KechengActivity"
-            android:screenOrientation="portrait" /><!--培训课程-->
+        <activity
+            android:name=".activity.KechengActivity"
+            android:screenOrientation="portrait" /> <!-- 培训课程 -->
 
-        <activity android:name=".activity.GuidanceManagerActivity"
-            android:screenOrientation="portrait" /><!--创业指导活动-->
+        <activity
+            android:name=".activity.GuidanceManagerActivity"
+            android:screenOrientation="portrait" /> <!-- 创业指导活动 -->
 
-        <activity android:name=".activity.SignActivity"
-            android:screenOrientation="portrait" /><!--人员签到-->
+        <activity
+            android:name=".activity.SignActivity"
+            android:screenOrientation="portrait" /> <!-- 人员签到 -->
+        <activity android:name=".activity.KechengPXActivity"></activity>
     </application>
 
 </manifest>

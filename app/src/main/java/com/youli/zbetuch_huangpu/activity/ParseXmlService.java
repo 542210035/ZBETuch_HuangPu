@@ -12,8 +12,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 public class ParseXmlService {
-	public HashMap<String, String> parseXml(InputStream inStream)
-			throws Exception {
+	public HashMap<String, String> parseXml(InputStream inStream) throws Exception {
 		HashMap<String, String> hashMap = new HashMap<String, String>();
 
 		// 实例化一个文档构建器工厂

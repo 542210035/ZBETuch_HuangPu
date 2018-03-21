@@ -260,48 +260,34 @@ public class ZiyuandiaochaActivity extends BaseActivity implements View.OnClickL
                 }
             }
         };
-
         rInfoLv.setAdapter(commonAdapter);
-
     }
-
 
     private void sendProblemMessage(Message msg) {
         msg.what = PROBLEM;
         mHandler.sendMessage(msg);
     }
 
-
     @Override
     public void onClick(View v) {
-
         switch (v.getId()) {
             case R.id.ziyuandiaocha_query_btn:
                 getNetData(typeStr, streetId);
                 break;
-
         }
-
     }
-
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
         Intent intent=new Intent(this,ZiyuanDetailListActivity.class);
         intent.putExtra("RInfo",RInfoList.get(position));
-
         startActivityForResult(intent,RequestCode);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
         if (requestCode == RequestCode && resultCode == ResultCode) {
-
             getNetData(typeStr, streetId);
-
-
         }
     }
 }

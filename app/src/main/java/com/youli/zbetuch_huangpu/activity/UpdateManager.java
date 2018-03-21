@@ -25,7 +25,7 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLEncoder;
+
 import java.util.HashMap;
 
 public class UpdateManager {
@@ -49,7 +49,7 @@ public class UpdateManager {
 	/* 更新进度条 */
 	private ProgressBar mProgress;
 	private Dialog mDownloadDialog;
-	int versionCode;
+	int versionCode;   //本地版本号
 	private Handler mHandler = new Handler() {
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
@@ -69,9 +69,7 @@ public class UpdateManager {
 						Log.i("2016-11-28", "服务器版本号==" + serviceCode);
 						// 版本判断
 						if (serviceCode > versionCode) {
-
 							showNoticeDialog();
-
 						} else {
 							Toast.makeText(mContext, R.string.soft_update_no, Toast.LENGTH_LONG).show();
 						}
@@ -111,20 +109,15 @@ public class UpdateManager {
 	private void isUpdate() {
 		// 获取当前软件版本
 		versionCode = getVersionCode(mContext);
-
 		Log.e("2018-2-1","本地版本号===============" + versionCode);
-
 		new Thread(new Runnable() {
 			public void run() {
-
 				URL url;// 定义网络中version.xml的连接
 				try {
-					url = new URL(MyOkHttpUtils.BaseUrl
-							+ "/version.xml");
+					url = new URL(MyOkHttpUtils.BaseUrl + "/version.xml");
 					// url = new
 					// URL("http://www.fcxx.net.cn/images/version.xml");//创建version.xml的连接地址。
-					HttpURLConnection connection = (HttpURLConnection) url
-							.openConnection();
+					HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 					connection.setConnectTimeout(5000);
 					connection.setReadTimeout(5000);
 					connection.connect();
@@ -156,6 +149,7 @@ public class UpdateManager {
 		int versionCode = 0;
 		try {
 			// 获取软件版本号，对应AndroidManifest.xml下android:versionCode
+			//context.getPackageName()获取包名
 			versionCode = context.getPackageManager().getPackageInfo(
 					context.getPackageName(), 0).versionCode;
 		} catch (NameNotFoundException e) {
@@ -215,7 +209,6 @@ public class UpdateManager {
 				new OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-
 						// 设置取消状态
 						cancelUpdate = true;
 					}

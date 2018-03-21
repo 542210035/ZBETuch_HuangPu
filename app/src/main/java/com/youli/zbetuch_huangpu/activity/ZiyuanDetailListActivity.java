@@ -377,15 +377,26 @@ public class ZiyuanDetailListActivity extends BaseActivity implements RadioGroup
                 rg.check(R.id.ziyuan_detail_weicha_rb);
                 setTypeId();
                 sfzStr="null";
-                typeStr="null";
-                getNetWorkData(rInfo.getDcid(),rInfo.getDclx(),typeId,"null",pageIndex,"null");
+//                typeStr="null";
+                if (typeStr !=null) {
+                    Log.e("target=","3333333333");
+                    getNetWorkData(rInfo.getDcid(),rInfo.getDclx(),typeId,"null",pageIndex,typeStr);
+                }else {
+                    getNetWorkData(rInfo.getDcid(),rInfo.getDclx(),typeId,"null",pageIndex,"null");
+                }
+
                 break;
             case R.id.ziyuan_detail_yicha_rb:
                 rg.check(R.id.ziyuan_detail_yicha_rb);
                 setTypeId();
                 sfzStr="null";
-                typeStr="null";
-                getNetWorkData(rInfo.getDcid(),rInfo.getDclx(),typeId,"null",pageIndex,"null");
+//                typeStr="null";
+                if (typeStr !=null) {
+                    Log.e("target=","3333333333");
+                    getNetWorkData(rInfo.getDcid(),rInfo.getDclx(),typeId,"null",pageIndex,typeStr);
+                }else {
+                    getNetWorkData(rInfo.getDcid(),rInfo.getDclx(),typeId,"null",pageIndex,"null");
+                }
                 break;
         }
     }

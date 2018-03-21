@@ -31,6 +31,7 @@ import com.youli.zbetuch_huangpu.R;
 import com.youli.zbetuch_huangpu.entity.LastInvest;
 import com.youli.zbetuch_huangpu.entity.PersonInfo;
 import com.youli.zbetuch_huangpu.entity.ResourcesDetailInfo;
+import com.youli.zbetuch_huangpu.utils.MyDateUtils;
 import com.youli.zbetuch_huangpu.utils.MyOkHttpUtils;
 import com.youli.zbetuch_huangpu.utils.MyToast;
 
@@ -50,7 +51,7 @@ public class ShiwuyeDetailActivity extends BaseActivity implements View.OnClickL
     private String DCLX;   //调查类型
     private ArrayAdapter<String> currStaAdapter;
     private RadioGroup rag,textView_type;
-    private RadioButton rb1, rb2,radioGroup_men,radioGroup_phone;
+    private RadioButton rb1, rb2,radioGroup_men,radioGroup_phone,radioGroup_other;
     private Context mContext = ShiwuyeDetailActivity.this;
     private boolean isCheck;
     private Button diaochaBtn, submitBtn, detailInfoBtn, resultBtn;
@@ -166,6 +167,8 @@ public class ShiwuyeDetailActivity extends BaseActivity implements View.OnClickL
         textView_type = (RadioGroup) findViewById(R.id.textView_type);
         radioGroup_men = (RadioButton) findViewById(R.id.radioGroup_men);
         radioGroup_phone = (RadioButton) findViewById(R.id.radioGroup_phone);
+        radioGroup_other = (RadioButton) findViewById(R.id.radioGroup_other);
+
         textView_type.setOnCheckedChangeListener(this);
 
         diaochaBtn = (Button) findViewById(R.id.shiwuye_detail_diaocha_btn);
@@ -227,9 +230,10 @@ public class ShiwuyeDetailActivity extends BaseActivity implements View.OnClickL
 
     private void initData() {
 
-        diaocharenEt.setText(HomePageActivity.adminName);
+
 
         if (isCheck) {
+            diaocharenEt.setText(RDInfo.getDCRXM());
             diaochaLl.setVisibility(View.VISIBLE);
             submitBtn.setClickable(false);
             submitBtn.setBackgroundResource(R.drawable.tj);
@@ -239,6 +243,7 @@ public class ShiwuyeDetailActivity extends BaseActivity implements View.OnClickL
             remarksEt.setText(RDInfo.getDCBZ());
             remarksEt.setTextColor(Color.parseColor("#c0c0c0"));
         } else {
+            diaocharenEt.setText(HomePageActivity.adminName);
             remarksEt.setTextColor(Color.parseColor("#000000"));
             remarksEt.setFocusable(true);
             diaochaLl.setVisibility(View.GONE);
@@ -320,8 +325,11 @@ public class ShiwuyeDetailActivity extends BaseActivity implements View.OnClickL
         presentIntentionEt.setText(RDInfo.getDQYX());//当前意向
         phoneEt.setText(RDInfo.getLXDH());//联系电话
         Calendar c = Calendar.getInstance();
-        diaochaDateEt.setText(c.get(Calendar.YEAR) + "-" + (c.get(Calendar.MONTH) + 1) + "-" + c.get(Calendar.DAY_OF_MONTH));//调查日期
-
+//        if(!isCheck) {
+//            diaochaDateEt.setText(c.get(Calendar.YEAR) + "-" + (c.get(Calendar.MONTH) + 1) + "-" + c.get(Calendar.DAY_OF_MONTH));//调查日期
+//        }else{
+//            diaochaDateEt.setText(RDInfo.getDCDATE());
+//        }
        if(currStaData!=null) {
            currStaAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, currStaData);
            currStaSp.setAdapter(currStaAdapter);
@@ -332,17 +340,21 @@ public class ShiwuyeDetailActivity extends BaseActivity implements View.OnClickL
         currIntSp.setAdapter(currIntAdapter);
 
         if (isCheck) {
+            diaochaDateEt.setText(MyDateUtils.stringToYMD(RDInfo.getDCDATE()));
             spinnerSetSelection("new");
             currIntSp.setEnabled(false);
             currStaSp.setEnabled(false);
             rb1.setEnabled(false);
             rb2.setEnabled(false);
             radioGroup_phone.setEnabled(false);
+            radioGroup_other.setEnabled(false);
             radioGroup_men.setEnabled(false);
         } else {
+            diaochaDateEt.setText(c.get(Calendar.YEAR) + "-" + (c.get(Calendar.MONTH) + 1) + "-" + c.get(Calendar.DAY_OF_MONTH));//调查日期
             currIntSp.setEnabled(true);
             currStaSp.setEnabled(true);
             radioGroup_phone.setEnabled(true);
+            radioGroup_other.setEnabled(true);
             radioGroup_men.setEnabled(true);
         }
 
@@ -395,7 +407,8 @@ public class ShiwuyeDetailActivity extends BaseActivity implements View.OnClickL
 
 
 
-                if (textView_type.getCheckedRadioButtonId() != radioGroup_men.getId() && textView_type.getCheckedRadioButtonId() != radioGroup_phone.getId()) {
+                if (textView_type.getCheckedRadioButtonId() != radioGroup_men.getId() && textView_type.getCheckedRadioButtonId() != radioGroup_phone.getId()
+                        &&textView_type.getCheckedRadioButtonId() != radioGroup_other.getId()) {
                   //  Toast.makeText(this, "请选择调查类型", Toast.LENGTH_SHORT).show();
                     MyToast.makeText(this,"请选择调查类型",1000).show();
                     return;
@@ -476,14 +489,11 @@ public class ShiwuyeDetailActivity extends BaseActivity implements View.OnClickL
 
         if (TextUtils.equals(RDInfo.getDCLX(),"上门调查")){
             textView_type.check(R.id.radioGroup_men);
-
         }else if(TextUtils.equals(RDInfo.getDCLX(),"电话调查")){
             textView_type.check(R.id.radioGroup_phone);
+        }else if(TextUtils.equals(RDInfo.getDCLX(),"其他调查")) {
+            textView_type.check(R.id.radioGroup_other);
         }
-
-
-
-
     }
 
 
@@ -539,11 +549,11 @@ public class ShiwuyeDetailActivity extends BaseActivity implements View.OnClickL
         }else if(TextUtils.equals(mark,"address")){
 
             if (TextUtils.equals("失业",type)) {
-                url = MyOkHttpUtils.BaseUrl + "/Json/Set_GPS_Staff_Log.aspx?sfz="+RDInfo.getZJHM()+"&detail=失业调查&gps="+HomePageActivity.jDuStr+","+HomePageActivity.wDuStr;
+                url = MyOkHttpUtils.BaseUrl + "/Json/Set_GPS_Staff_Log.aspx?sfz="+RDInfo.getZJHM()+"&detail=失业调查&gps="+HomePageActivity.jDuStr+","+HomePageActivity.wDuStr+"&IMEI="+HomePageActivity.imeiStr;
             } else if (TextUtils.equals("无业",type)) {
-                url = MyOkHttpUtils.BaseUrl + "/Json/Set_GPS_Staff_Log.aspx?sfz="+RDInfo.getZJHM()+"&detail=无业调查&gps="+HomePageActivity.jDuStr+","+HomePageActivity.wDuStr;
+                url = MyOkHttpUtils.BaseUrl + "/Json/Set_GPS_Staff_Log.aspx?sfz="+RDInfo.getZJHM()+"&detail=无业调查&gps="+HomePageActivity.jDuStr+","+HomePageActivity.wDuStr+"&IMEI="+HomePageActivity.imeiStr;
             } else if (TextUtils.equals("应届生",type)) {
-                url = MyOkHttpUtils.BaseUrl + "/Json/Set_GPS_Staff_Log.aspx?sfz="+RDInfo.getZJHM()+"&detail=应届生调查&gps="+HomePageActivity.jDuStr+","+HomePageActivity.wDuStr;
+                url = MyOkHttpUtils.BaseUrl + "/Json/Set_GPS_Staff_Log.aspx?sfz="+RDInfo.getZJHM()+"&detail=应届生调查&gps="+HomePageActivity.jDuStr+","+HomePageActivity.wDuStr+"&IMEI="+HomePageActivity.imeiStr;
             }
             response = MyOkHttpUtils.okHttpGet(url);
 
@@ -640,6 +650,8 @@ public class ShiwuyeDetailActivity extends BaseActivity implements View.OnClickL
                     DCLX = "上门调查";
                 } else if (textView_type.getCheckedRadioButtonId() == radioGroup_phone.getId()) {
                     DCLX = "电话调查";
+                }else if (textView_type.getCheckedRadioButtonId() == radioGroup_other.getId()) {
+                    DCLX = "其他调查";
                 }
                 break;
         }

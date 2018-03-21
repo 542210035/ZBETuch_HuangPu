@@ -931,6 +931,14 @@
                         android:layout_height="wrap_content"
                         android:text="电话调查"
                         android:layout_weight="0.8"/>
+                    <RadioButton
+                        android:textColor="#ffffff"
+                        android:textSize="16sp"
+                        android:id="@+id/radioGroup_other"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="其他调查"
+                        android:layout_weight="0.8"/>
 
                 </RadioGroup>
             </LinearLayout>
